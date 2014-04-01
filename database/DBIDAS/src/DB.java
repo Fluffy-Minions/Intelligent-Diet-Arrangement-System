@@ -28,7 +28,7 @@ public class DB {
 		    String query = "SELECT * FROM PREPARATE_CARNE";
 		    
 		    //execute sql statement
-		    st.execute(sqlSt);
+		    //st.execute(sqlSt);
 		    
 		    //execute query and put it in result set
 		    ResultSet rs = st.executeQuery(query);
