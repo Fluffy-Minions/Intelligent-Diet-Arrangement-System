@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Prototype</string>
+    <string name="title_section1">View menu</string>
+    <string name="title_section2">Edit profile</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+
+	<array name="genders">
+		<item>Select gender</item>
+		<item>Female</item>
+		<item>Male</item>
+	</array>
+
+	<array name="activity_levels">
+		<item>Select activity level</item>
+		<item>Sedentary</item>
+		<item>Lightly active</item>
+		<item>Moderately active</item>
+		<item>Very active</item>
+		<item>Extremely active</item>
+		<item>Minion diet (you feast with Minions)</item>
+	</array>
+	
+	<array name="days_of_week">
+		<item>Monday</item>
+		<item>Tuesday</item>
+		<item>Wednesday</item>
+		<item>Thursday</item>
+		<item>Friday</item>
+		<item>Saturday</item>
+		<item>Sunday</item>
+	</array>
+
+</resources>
