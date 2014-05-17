@@ -6,6 +6,7 @@ public class TotalNeedsCalculator {
 	private TotalCaloriesCalculator caloriesCalculator = new TotalCaloriesCalculator();
 	private TotalFiberCalculator fiberCalculator = new TotalFiberCalculator();
 	private TotalFatsCalculator fatsCalculator = new TotalFatsCalculator();
+	private TotalCarbsCalculator carbsCalculator = new TotalCarbsCalculator();
 	private PersonalProfile profile;
 
 	public double getNecessaryCalories(){
@@ -36,6 +37,7 @@ public class TotalNeedsCalculator {
 		fiberCalculator.computeFiber(calories);
 		proteinsCalculator.computeProteins(profile);
 		fatsCalculator.computeFats(calories);
+		carbsCalculator.computeCarbs(calories);
 	}
 	
 }

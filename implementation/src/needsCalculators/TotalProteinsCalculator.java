@@ -1,7 +1,7 @@
 package needsCalculators;
 
 public class TotalProteinsCalculator {
-	double proteins;
+	private double proteins;
 	
 	public double getProteins() {
 		return proteins;
