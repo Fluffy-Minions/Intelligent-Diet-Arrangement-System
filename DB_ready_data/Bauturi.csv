@@ -14,7 +14,7 @@ Bautura carbogazoasa Pepsi Twist Lemon,1,1,1,0,0,41,0,0,10,0
 Bautura carbogazoasa Sprite,1,1,1,0,0,39,0,0,9.6,0
 Bautura cu fructe si leche Don Simon,1,1,1,0,0,33,0.4,0,7.6,0
 Bautura cu lamaie si ceai verde Top Lemon-Lime Santal,1,1,1,0,0,34,0,0,8.6,0
-"Bautura cu morcov, portocale, mar Tedi",1,1,1,0,0,52,0.3,0.1,12.4,1.3
+Bautura cu morcov portocale mar Tedi,1,1,1,0,0,52,0.3,0.1,12.4,1.3
 Bautura de portocale Don Simon,1,1,1,0,0,43,0.6,0.1,10,0
 Bautura de soia cu vanilie Delhaize,1,1,1,0,0,56,3,1.8,6.9,0.5
 Bautura din orz solubil Crastan,1,1,1,0,0,344,8,0,78,4
@@ -37,7 +37,7 @@ Bautura light de portocale Giusto Natura,1,1,1,0,0,8.7,0,0,1.9,0
 Bautura light Ice Tea Lemon Ice Tea,1,1,1,0,0,1,0.1,0.1,0.1,0.1
 Bautura naturala de coacaze Costa,1,1,1,0,0,19,0.1,0,4.7,0.2
 Bautura pentru sportivi cu aroma de lamaie Gatorade,1,1,1,0,0,25,0,0,6,0
-"Bautura racoritoare cactus, mere, lamai verzi Tymbark",1,1,1,0,0,47,0.1,0.1,11.4,0
+Bautura racoritoare cactus mere lamai verzi Tymbark,1,1,1,0,0,47,0.1,0.1,11.4,0
 Bautura racoritoare cocktail rosu Multi vitamine Tymbark,1,1,1,0,0,37,0.1,0,9.2,0
 Bautura racoritoare cu Aloe Vera Tropical,1,1,1,0,0,38,0,0,9.6,0
 Bautura racoritoare cu capsuni Tymbark Fontea,1,1,1,0,0,18,0,0,4.5,0
@@ -85,7 +85,7 @@ Cafea Jacobs 3 in 1 intense,1,1,0,0,0,407,3,12.6,71.2,0
 Cafea Latte machiato Dolce Gusto,1,1,0,0,0,39,1.9,3.6,1.9,0.1
 Cafea Latte Machiato Illy,1,1,0,0,0,46,1.3,1.3,7.3,0
 Cafea Lavazza Crema e Gusto,1,1,0,0,0,12,0.9,0,2,0
-Cafea Lavazza Qualit√† Oro,1,1,0,0,0,12,0.8,0,2,0
+Cafea Lavazza Qualit‡ Oro,1,1,0,0,0,12,0.8,0,2,0
 Cafea Lavazza Rossa,1,1,0,0,0,12,0.8,0,2,0
 Cafea macinata Lavazza Suerte,1,1,0,0,0,12,0.6,0,2.2,0
 Cafea Nescafe Brasero,1,1,0,0,0,66,7,0.2,9,27
@@ -106,12 +106,12 @@ Cappuccino fara zahar Crastan,1,1,0,0,0,429,17,15,56.5,0
 Cappuccino instant Rafael,1,1,0,0,0,458,7.2,18.2,63.4,5.8
 Cappuccino Milka Jacobs,1,1,0,0,0,415,7.6,10,46.5,3.5
 Cappuccino Natural Hacendado,1,1,0,0,0,410,8.3,16.5,55.2,3.6
-Captain's Morgan White Rum,0,1,1,0,0,216,0,0,0,0
+Captains Morgan White Rum,0,1,1,0,0,216,0,0,0,0
 Ceai,1,1,1,0,0,0,0,0,0,0
 Ceai de mere Lord Nelson Lidl,1,1,1,0,0,3,0.1,0.1,0.6,0.1
 Ceai fructe padure Lipton,1,1,1,0,0,4,0.5,0,0.5,0
 Ceai verde Haceando,1,1,1,0,0,23.6,0.1,0.1,5.7,0.1
-"Ceai verde, aloe vera si capsuni Nestea Vitao",1,1,1,0,0,30,0,0,7.3,0
+Ceai verde aloe vera si capsuni Nestea Vitao,1,1,1,0,0,30,0,0,7.3,0
 Ciocco latte Dr.Oetker,1,1,1,0,0,103.3,3.7,3.4,14.4,1.1
 Ciocolata calda,1,1,1,0,0,353,6,12,59,0
 Ciocolata calda dark Hot Chocolatta La Festa,1,1,1,0,0,402,6.8,5.6,78.4,5.4
@@ -158,7 +158,6 @@ Lapte din soia aroma de portocale Inedit,1,1,1,0,0,36,1.7,1.4,4.1,0
 Lapte din soia simplu Inedit,1,1,1,0,0,18,1.9,1.1,0,0
 Lapte din soia Soyaccino Sanitarium,1,1,1,0,0,57,3.1,1.5,7.7,0.1
 Lapte orez si migdale Joya,1,1,1,0,0,73.3,0.8,0,12.5,0.6
-"Lapte proaspat 1,5% Paco",1,1,1,0,0,45,3.2,1.5,4.7,0
 Lapte soaa si migdale Alpro,1,1,1,0,0,24,1.1,0.5,3,0.2
 Lapte soia original Alpro,1,1,1,0,0,38,3,1.8,2.5,0.5
 Lapte soia Sanitarium,1,1,1,0,0,65,3.4,3.4,5,0
@@ -185,7 +184,7 @@ Nectar de portocale Ciao,1,1,1,0,0,50,0.3,0.1,12.1,0
 Nectar din 12 fructe 365 Mega Image,1,1,1,0,0,24,0.2,0.1,5.2,0.1
 Nectar light multivitamin Linessa,1,1,1,0,0,25,0,0,5.2,0
 Nectar multivitamine Ciao,1,1,1,0,0,24,0.1,0,5.8,0
-Nectar multivitamine mix de fructe rosii Becker's Bester,1,1,1,0,0,30,0.2,0.1,6.7,0
+Nectar multivitamine mix de fructe rosii Beckers Bester,1,1,1,0,0,30,0.2,0.1,6.7,0
 Nectar orange Solevita,1,1,1,0,0,33,0,0,7.6,0
 Nectar piersici,1,1,1,0,0,54,0.3,0,13.9,0.6
 Nectar piersici Fruttia,1,1,1,0,0,66,0.5,0,16.7,0
@@ -274,8 +273,8 @@ Suc light cu aloe vera Vedda,1,1,1,0,0,2,0,0,0.4,0
 Suc mango Phaner,1,1,1,0,0,47,0.2,0,11.2,0.4
 Suc mere 50% Sun Gold ,1,1,1,0,0,38,0.1,0.1,9.5,0
 Suc mere si zmeura Ciao,1,1,1,0,0,28,0,0,6.7,0
-"Suc morcov, capsuni, lamaie verde, mar Tedi Play",1,1,1,0,0,44,0.1,0,11,0.1
-"Suc morcovi,mere,portocale Carotella Plus",1,1,1,0,0,45,0.4,0.1,10.6,1.2
+Suc morcov capsuni lamaie verde mar Tedi Play,1,1,1,0,0,44,0.1,0,11,0.1
+Suc morcovi mere portocale Carotella Plus,1,1,1,0,0,45,0.4,0.1,10.6,1.2
 Suc multifruct multivitamine fara zahar Pfanner,1,1,1,0,0,53,0.3,0.1,11.7,0.4
 Suc natural Aloe Vera King,1,1,1,0,0,38.3,0,0,9.4,0
 Suc natural de grapefruit,1,1,1,0,0,41,0.5,0.1,9.6,0
@@ -344,7 +343,7 @@ Lapte soia Central Lechera Asturiana,1,0,1,0,0,26,2.1,1.2,1.6,0
 Lapte soia cu calciu Alpro,1,0,1,0,0,55,3,1.7,6.7,0
 Lapte soia vanilie Interspar Vital,1,0,1,0,0,40,2.9,1.7,3.9,0.5
 Milk shake cu ciocolata Gerlinea,1,1,1,0,0,676,43,18,84,4
-Bautura din orez Alpro,1,,1,0,0,61,0.2,1.2,12.2,0
+Bautura din orez Alpro,1,0,1,0,0,61,0.2,1.2,12.2,0
 Ciocolata extra cocoa Milka,1,1,1,0,0,545,8.6,36,45.5,5.8
 Ice coffee,1,1,1,0,0,82,3.5,1.5,13,0
 Protein shake banane cu L-Carnitina Sponser,1,1,1,0,0,370,83,3.5,4.5,0

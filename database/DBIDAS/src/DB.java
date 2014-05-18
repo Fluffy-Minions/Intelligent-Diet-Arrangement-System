@@ -20,23 +20,25 @@ public class DB {
 		    
 		    //create statement object
 		    st = c.createStatement();
-		    String sqlSt = "CREATE TABLE OUA " +
+		    String sqlSt = "CREATE TABLE BAUTURI " +
 		    		" (ID INT PRIMARY KEY NOT NULL," +
 		    		" NAME STRING, BREAKFAST INT, LUNCH INT, DINNER INT, NEEDS_SIDEDISH INT, IS_SIDEDISH INT, " +
 		    		" CALORIES INT, PROTEINS INT, FATS INT, CARBS INT, FIBER INT, VITAMINS INT, MINERALS INT)";
-		    String query = "SELECT * FROM LEGUME";
+		  
+		    String query = "SELECT * FROM BAUTURI";
 		    
+		    String sqlDrop = "DROP TABLE BAUTURI";
 		    //execute sql statement
 		    st.execute(sqlSt);
 		    
 		    //execute query and put it in result set
-		    //ResultSet rs = st.executeQuery(query);
+		 //   ResultSet rs = st.executeQuery(query);
 		    
 		    //iterate through result set (the rows retrieved by the query)
 		    
-//		    while(rs.next()){									
-//		    	
-//		    }
+		  /*  while(rs.next()){									
+		    	System.out.println(rs.getObject("NAME"));
+		    }*/
 		    
 		    //close everything
 		  //  rs.close();
