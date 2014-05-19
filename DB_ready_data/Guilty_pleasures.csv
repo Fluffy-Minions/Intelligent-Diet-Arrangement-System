@@ -23,7 +23,7 @@ Cordon bleu Baroni Lidl,0,1,1,0,0,238,9.2,14,18.8
 Crispy Strips KFC,0,1,1,0,0,328,14.2,16.4,9.6
 Crochete vegetale (falafel) Al Wadi,0,1,1,0,0,411,14,22,40
 Croissant simplu Euro Shopper,0,1,1,0,0,385,6,24,37
-Cubulete din piept de pui Sav'or,0,1,1,0,0,92,20,2,3
+Cubulete din piept de pui Savor,0,1,1,0,0,92,20,2,3
 Double cheeseburger McDonalds,0,1,1,0,0,266,15.2,14,20.6
 Dublu McPuisor McDonalds,0,1,1,0,0,285,12.7,12.1,24.2
 Enchiladas de pui cu sos de rosii si casval Maheso,0,1,1,0,0,157,9.7,6.8,14.2
@@ -56,8 +56,8 @@ Foietaj strudel cu mere Fornetti XXL,0,1,1,0,0,352,7.9,19.5,33.9
 Foietaj trigon cu caise Fornetti XXL,0,1,1,0,0,316,8.3,10.6,44.9
 Foietaj twist cu afine Fornetti XXL,0,1,1,0,0,323,8.3,11.6,44.2
 Foietaj Twist cu crema de branza si bacon Fornetti XXL,0,1,1,0,0,373,12.4,18.5,36.8
-Friptura de pui Sav'or,0,1,1,0,0,113,20,2,5
-Fructe si nuci Nut Snack Farmer's Snack,0,1,1,0,0,490,14.9,34.2,30.6
+Friptura de pui Savor,0,1,1,0,0,113,20,2,5
+Fructe si nuci Nut Snack Farmers Snack,0,1,1,0,0,490,14.9,34.2,30.6
 Hamburger McDonalds,0,1,1,0,0,255,13,9,30
 Inele de ceapa pane Burger King,0,1,1,0,0,336.4,4.8,16.9,41.1
 Inghetata cu caramel McDonalds,0,1,1,0,0,295,5,7,53
@@ -153,7 +153,7 @@ Sandwich piept pui grill Sandwich Time,0,1,1,0,0,225,14.2,5.8,29.1
 Sandwich pui la grill si cruditati Snack Attack,0,1,1,0,0,186,11,6.5,19.6
 Sandwich pui si ardei copt Snack Attack,0,1,1,0,0,154,11.3,3.4,18.9
 Sandwich Sombrero Green up Papa verde,0,1,1,0,0,303,8.6,16.2,28.6
-"Sandwich sunca curcan, cascaval, castraveti murati Ciao Green Up Papa Verde",0,1,1,0,0,287,8.1,12.8,33
+Sandwich sunca curcan  cascaval  castraveti murati Ciao Green Up Papa Verde,0,1,1,0,0,287,8.1,12.8,33
 Sandwich sunca de Praga si cascaval Sandwich Time,0,1,1,0,0,258,9.7,8.4,36
 Sandwich sunca Praga si branza Cedar Snack Attack,0,1,1,0,0,196,12.9,7.8,18.4
 Sandwich ton cu dressing de iaurt si hrean Snack Attack,0,1,1,0,0,243,10.3,11.1,24
@@ -165,7 +165,7 @@ Sandwich Veggie Party Subway,0,1,1,0,0,161,9,3.8,21.8
 Sandwich vita si branza Subway,0,1,1,0,0,146.5,10.4,3,20.4
 Sandwich Wikinger Nordsee,0,1,1,0,0,226,16,37,47
 Sandwich Zinger KFC,0,1,1,0,0,267.9,15.7,12.3,23.7
-Saratele cu branza Clarky's Plus,0,1,1,0,0,488,13,24,55
+Saratele cu branza Clarkys Plus,0,1,1,0,0,488,13,24,55
 Shaorma,0,1,1,0,0,238,8.2,14.4,18.9
 Snitel de curcan congelat Saga,0,1,1,0,0,194,14,10,12
 Snitel din piept de pui semipreparat Sadia,0,1,1,0,0,208,15,10,14
@@ -187,17 +187,17 @@ Bake Rolls pizza 7 Days,1,1,1,0,0,496,14,16,71
 Baton cereale cu fructe tropicale si iaurt Active Bar Rommac,1,1,1,0,0,321,6,2,77
 Baton cereale cu smochine si prune Aptonia,1,1,1,0,0,335,30,12,26
 Baton cereale pentru controlul greutatii Carrefour,1,1,1,0,0,307,10,9.5,57
-Baton crocant cu caju Schock's,1,1,1,0,0,484,10,30.2,50.7
+Baton crocant cu caju Schocks,1,1,1,0,0,484,10,30.2,50.7
 Baton cu cereale Carrefour,1,1,1,0,0,318,10,5.5,57
 Baton cu cereale si ciocolata alba Fitness,1,1,1,0,0,388,5.6,7.4,67.7
 Baton cu musli si mar First Nice,1,1,1,0,0,363,4.7,9.7,64
 Baton cu musli si piersici FirstNice,1,1,1,0,0,432,6.2,18.2,60.8
-"Baton cu musli, alune si cacao FirstNice",1,1,1,0,0,385,7.5,9.6,66.8
-"Baton cu musli, cocos si cacao First Nice",1,1,1,0,0,427,7.2,18,60
-"Baton cu musli, prune si iaurt First Nice",1,1,1,0,0,410,6.8,17.5,56.3
+Baton cu musli  alune si cacao FirstNice,1,1,1,0,0,385,7.5,9.6,66.8
+Baton cu musli  cocos si cacao First Nice,1,1,1,0,0,427,7.2,18,60
+Baton cu musli  prune si iaurt First Nice,1,1,1,0,0,410,6.8,17.5,56.3
 Baton cu smochine si prune Delhaize,1,1,1,0,0,372,3.4,5.4,77.4
 Baton de susan cu alune Tastino,1,1,1,0,0,510,12.1,24.3,56.9
-"Baton din fructe, cu nuci, cereale si scortisoara Nutribon",1,1,1,0,0,349,4.5,14.7,54.3
+Baton din fructe  cu nuci  cereale si scortisoara Nutribon,1,1,1,0,0,349,4.5,14.7,54.3
 Baton energetic cu iaurt si portocala Das Gesunde Plus,1,1,1,0,0,137,4.2,4.2,20.7
 Baton energizant cu cocos DM,1,1,1,0,0,421,22.2,15,49.1
 Baton energizant Energy Bar Red Cat,1,1,1,0,0,429,10.3,17.5,56
@@ -257,27 +257,27 @@ Briose cu ciocolata Pan Goccioli Mulino Bianco,1,1,1,0,0,370,8,15.5,48.5
 Bruschete cu ciuperci si smantana Maretti,1,1,1,0,0,465.5,8.8,18.8,65.5
 Bruschete Mix de legume picante Maretti,1,1,1,0,0,465.5,8.8,18.8,65.5
 Bruschete quatro formaggi Maretti,1,1,1,0,0,453.7,8.8,17.4,65.5
-Cartofi prajiti Lay's Sticks,1,1,1,0,0,500,8,32,46
+Cartofi prajiti Lays Sticks,1,1,1,0,0,500,8,32,46
 Chips cartofi,1,1,1,0,0,536,7.1,35.7,53.6
 Chips Chio Barbeque,1,1,1,0,0,530,5.7,35,48
-Chips copt cu Paprika Lay's,1,1,1,0,0,415,5.5,9.5,74
-Chips cu aroma de pui la cuptor cu lamaie si cimbru Lay's Sensations,1,1,1,0,0,490,7.5,30,46
+Chips copt cu Paprika Lays,1,1,1,0,0,415,5.5,9.5,74
+Chips cu aroma de pui la cuptor cu lamaie si cimbru Lays Sensations,1,1,1,0,0,490,7.5,30,46
 Chips cu branza Cheese Chio,1,1,1,0,0,553,5.5,35,16
 Chips cu paprika Viva,1,1,1,0,0,504,5,26,62
-Chips cu sare Lay's,1,1,1,0,0,530,6.5,35,47
-Chips cu sare Lay's Baked Chips Salt,1,1,1,0,0,420,5,11,74
+Chips cu sare Lays,1,1,1,0,0,530,6.5,35,47
+Chips cu sare Lays Baked Chips Salt,1,1,1,0,0,420,5,11,74
 Chips cu sare Pringles,1,1,1,0,0,526,3.9,34,52
 Chips cu sare Viva,1,1,1,0,0,506,5.4,26,63
 Chips cu smantana si ceapa Pringles,1,1,1,0,0,517,4.1,33,52
 Chips cu smantana si ierburi mediteranene Chio,1,1,1,0,0,524,5.7,34,50
 Chips paprika Viva,1,1,1,0,0,489,5.5,23,65
 Chips porumb cu sare Tornado Ryderz,1,1,1,0,0,513.2,5.5,29.9,55.5
-Chips sete de bere Lay's,1,1,1,0,0,525,6.8,33,48
+Chips sete de bere Lays,1,1,1,0,0,525,6.8,33,48
 Chips Soltino,1,1,1,0,0,578,5,40,50
 Chips Tortilas de porumb Poco Loco,1,1,1,0,0,309,8,7,51
 Chips tortilla cu sare Doritos,1,1,1,0,0,489,7,23,61
 Chips Xtreme Wasabi Chio Chips,1,1,1,0,0,509,5.8,30,52
-Chipsuri cu aroma barbeque Lay's,1,1,1,0,0,525,6.6,34,48
+Chipsuri cu aroma barbeque Lays,1,1,1,0,0,525,6.6,34,48
 Chipsuri cu aroma de paprika Mister Potato Crisps ,1,1,1,0,0,506,14.6,25,55.5
 Chipsuri cu otet Walkers,1,1,1,0,0,519,5.9,30.8,52.6
 Chipsuri cu porumb Pural,1,1,1,0,0,508,8,24,65
@@ -294,7 +294,7 @@ Covrigei cu mac Franzeluta,1,1,1,0,0,393.3,9.8,6.4,73.2
 Covrigei cu mac Rollton,1,1,1,0,0,398,9.8,9.8,75.8
 Covrigei cu mac si sare Circuss,1,1,1,0,0,446,11.8,7.5,69.5
 Covrigei cu mac Solaris,1,1,1,0,0,110,2.9,9.1,3.1
-"Covrigei cu rosii, busuioc, oregano Boromir",1,1,1,0,0,429,10.9,10.3,73.3
+Covrigei cu rosii  busuioc  oregano Boromir,1,1,1,0,0,429,10.9,10.3,73.3
 Covrigei cu sare Clip Pretzels Ulker,1,1,1,0,0,400,10,9.5,70
 Covrigei cu sare Croco,1,1,1,0,0,403,11.8,8.9,68.8
 Covrigei cu sare Dolce Diaco,1,1,1,0,0,424,6.8,7.1,82.1
@@ -349,7 +349,7 @@ Mix brezel &crackers Croco,1,1,1,0,0,480,9.2,21.9,60
 Mix fructe deshidratate si migdale Fitness Mix Nutline,1,1,1,0,0,399,8.5,15,57.4
 Nachos Tortilla Chips Chili Casa Fiesta,1,1,1,0,0,500,6.5,23,65
 Napolitane Sfogliatine Balocco,1,1,1,0,0,538,6.5,32,56
-"Pesmeti  din paine de grau si secara,cu gust de icre rosii de somon Flint",1,1,1,0,0,365,10.3,11,58.6
+Pesmeti  din paine de grau si secara cu gust de icre rosii de somon Flint,1,1,1,0,0,365,10.3,11,58.6
 Popcorn bacon Chio Micro,1,1,1,0,0,427.1,7.9,23.1,46.9
 Popcorn cu aroma de branza Crox,1,1,1,0,0,419,8.3,19.4,47.7
 Popcorn cu cascaval,1,1,1,0,0,475,11.5,21,60
@@ -363,7 +363,7 @@ Popcorn pentru microunde cu sare Carrefour,1,1,1,0,0,462,8.3,24.3,52.7
 Popcorn pentru microunde cu sare Chio,1,1,1,0,0,444,8.1,20.7,56.4
 Popcorn pentru microunde cu sare Star,1,1,1,0,0,460,9,22,52
 Porumb de floricele Winny,1,1,1,0,0,360.5,10.6,4.9,68.5
-Porumb prajit cu sare Orlando's,1,1,1,0,0,640,24,55,13.2
+Porumb prajit cu sare Orlandos,1,1,1,0,0,640,24,55,13.2
 Porumb prajit Mexicorn Mogyi,1,1,1,0,0,510,7.3,19.6,76
 Porumb prajit MisterCorn,1,1,1,0,0,448,8,24,50
 Pufuleti,1,1,1,0,0,445,5,22,58
@@ -388,9 +388,9 @@ Pufuleti simpli Gusto,1,1,1,0,0,435,7.5,9.1,80.8
 Pufuleti simpli Speedy,1,1,1,0,0,456,6.2,18.5,63.3
 Pufuleti Star Snacks Star Foods,1,1,1,0,0,480,7.5,30,46
 Saleuri cu susan Alpin,1,1,1,0,0,368,6,22.5,35.4
-"Sandwich cu branza feta, cascaval, ardei copt Branzarella Green Up Papa Verde",1,1,1,0,0,286,8.3,13,32
+Sandwich cu branza feta  cascaval  ardei copt Branzarella Green Up Papa Verde,1,1,1,0,0,286,8.3,13,32
 Sandwich cu piept de pui si cascaval Rivoli,1,1,1,0,0,206.1,13.1,7.5,19.8
-"Sandwich cu salam uscat, pastrama de porc, crema de branza cu smantana Meat Me Green Up Papa Verde",1,1,1,0,0,298,7.5,14.5,32.6
+Sandwich cu salam uscat  pastrama de porc  crema de branza cu smantana Meat Me Green Up Papa Verde,1,1,1,0,0,298,7.5,14.5,32.6
 Saratele chimen Giprod,1,1,1,0,0,326,10.3,3,74.2
 Saratele crocante cu seminte dovleac si cascaval Alnatura,1,1,1,0,0,464,16.3,19.7,49.1
 Saratele cu branza Circuss,1,1,1,0,0,373,13.7,6.8,62.7
@@ -399,7 +399,7 @@ Saratele cu chimen Cheese CD Monte Banato,1,1,1,0,0,430,10.5,12.3,69.2
 Saratele Fornetti,1,1,1,0,0,260,8.2,6.4,39.7
 Saratele Monte Banato,1,1,1,0,0,475,14,2.5,73
 Snack din porumb cu sare Star Snacks StarFoods,1,1,1,0,0,500,5,27,59
-Snack portocale si ciocolata Delissima Kellogg's,1,1,1,0,0,399,4,10,74
+Snack portocale si ciocolata Delissima Kelloggs,1,1,1,0,0,399,4,10,74
 Snack Tortitzi cu susan alb si negru,1,1,1,0,0,398,6.9,8.4,73.7
 Snacks cu branza Olyps,1,1,1,0,0,521,6,33,50
 Snacks cu gust de pizza Lotto Best Food,1,1,1,0,0,505,8,35,51
