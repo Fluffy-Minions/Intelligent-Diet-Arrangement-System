@@ -55,7 +55,16 @@ public class DBRows {
 
 	public int[] getPrices() {
 		Random random = new Random();
-		return new int[] { random.nextInt(50) + 1,  random.nextInt(50) + 1, random.nextInt(50) + 1, random.nextInt(50) + random.nextInt(50) + 1 };
+
+        int[] prices = new int[getNames().length];
+
+        for(int i = 0; i < prices.length; ++i) {
+            prices[i] = random.nextInt(50) + 1;
+        }
+
+        return prices;
+
+		//return new int[] { random.nextInt(50) + 1,  random.nextInt(50) + 1, random.nextInt(50) + 1, random.nextInt(50) + random.nextInt(50) + 1 };
 	}
 
 	public int[][] getIngredientsMatrix() {
