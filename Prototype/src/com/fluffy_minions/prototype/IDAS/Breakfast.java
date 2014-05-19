@@ -3,48 +3,50 @@ package com.fluffy_minions.prototype.IDAS;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Logger;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import com.fluffy_minions.prototype.SQLiteHelper;
 import com.fluffy_minions.prototype.food.DBRow;
+import com.fluffy_minions.prototype.food.DBRows;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 import com.fluffy_minions.prototype.needsCalculators.TotalNeedsCalculator;
 
 public class Breakfast implements IMeal{
-    private SQLiteHelper mSQLiteHelper;
+    private static final Logger LOGGER = Logger.getLogger(Breakfast.class.getName());
     private String[] tables = new String[] { "BAUTURI", "OUA", "CEREALE", "FRUCTE", "LACTATE", "LEGUME", "PREPARATE_CARNE", "PREPARATE_FARA_CARNE" };
-    private String[] columns = new String[] { "CALORIES", "FATS", "CARBS", "FIBER", "PROTEINS" };
-    List<DBRow> all = new ArrayList<>();
+    DBRows dbRows = new DBRows();
 
     public Breakfast(SQLiteHelper sqLiteHelper) {
-        mSQLiteHelper = sqLiteHelper;
 
         SQLiteDatabase db = sqLiteHelper.getReadableDatabase();
 
         for(String table : tables) {
             Cursor c = db.rawQuery("SELECT * FROM " + table, null);
 
-            int[] indexes = new int[] { c.getColumnIndex("_id"),
-            c.getColumnIndex("NAME"),
-            c.getColumnIndex("BREAKFAST"),
-            c.getColumnIndex("LUNCH"),
-            c.getColumnIndex("DINNER"),
-            c.getColumnIndex("NEEDS_SIDEDISH"),
-            c.getColumnIndex("IS_SIDEDISH"),
-            c.getColumnIndex("CALORIES"),
-            c.getColumnIndex("PROTEINS"),
-            c.getColumnIndex("FATS"),
-            c.getColumnIndex("CARBS"),
-            c.getColumnIndex("FIBER"),
-            c.getColumnIndex("VITAMINS"),
-            c.getColumnIndex("MINERALS") };
+            int[] indexes = new int[] {
+                c.getColumnIndex("_id"),
+                c.getColumnIndex("NAME"),
+                c.getColumnIndex("BREAKFAST"),
+                c.getColumnIndex("LUNCH"),
+                c.getColumnIndex("DINNER"),
+                c.getColumnIndex("NEEDS_SIDEDISH"),
+                c.getColumnIndex("IS_SIDEDISH"),
+                c.getColumnIndex("CALORIES"),
+                c.getColumnIndex("PROTEINS"),
+                c.getColumnIndex("FATS"),
+                c.getColumnIndex("CARBS"),
+                c.getColumnIndex("FIBER"),
+                c.getColumnIndex("VITAMINS"),
+                c.getColumnIndex("MINERALS")
+            };
 
             while(c.moveToNext()) {
-                all.add(new DBRow(
-                   c.getLong(indexes[0]),
-                   c.getString(indexes[1]),
-                   c.getInt(indexes[2]),
+                DBRow row = new DBRow(
+                        c.getLong(indexes[0]),
+                        c.getString(indexes[1]),
+                        c.getInt(indexes[2]),
                         c.getInt(indexes[3]),
                         c.getInt(indexes[4]),
                         c.getInt(indexes[5]),
@@ -56,7 +58,9 @@ public class Breakfast implements IMeal{
                         c.getInt(indexes[11]),
                         c.getInt(indexes[12]),
                         c.getInt(indexes[13])
-                ));
+                );
+
+                dbRows.add(row);
             }
 
             c.close();
@@ -65,38 +69,27 @@ public class Breakfast implements IMeal{
 
 	@Override
 	public String[] getNames() {
-		String s = "SELECT NAME FROM BAUTURI, OUA, CEREALE, FRUCTE, LACTATE, LEGUME, PREPARATE_CARNE, PREPARATE_FARA_CARNE WHERE BREAKFAST=1 ORDER BY NAME";
-
-        return null;
+           return dbRows.getNames();
 	}
 
 	@Override
 	public String[] getIngredients() { 
-		String s = "CALORIES, FATS, CARBS, FIBER, PROTEINS";
-		return null;
+		return dbRows.getIngredients();
 	}
 
 	@Override
 	public int[] getMinimumRequiredIngredients(PersonalProfile profile) {
-		TotalNeedsCalculator calculator = new TotalNeedsCalculator();
-		calculator.computeNeeds();
-		return new int[] {(int)calculator.getBreakfastCalories(), (int)calculator.getBreakfastFats(),
-				(int)calculator.getBreakfastCarbs(), (int)calculator.getBreakfastFiber(), 
-				(int)calculator.getBreakfastProteins()};
+		return dbRows.getMinimumRequiredIngredients(profile);
 	}
 
 	@Override
 	public int[] getPrices() {
-        Random random = new Random();
-        return new int[] { random.nextInt(50) + 1,  random.nextInt(50) + 1, random.nextInt(50) + 1, random.nextInt(50) + random.nextInt(50) + 1 };
+        return dbRows.getPrices();
 	}
 
 	@Override
 	public int[][] getIngredientsMatrix() {
-		String s = "SELECT NAME, CALORIES, FATS, CARBS, FIBER, PROTEINS " +
-				"FROM BAUTURI, OUA, CEREALE, FRUCTE, LACTATE, LEGUME, PREPARATE_CARNE, PREPARATE_FARA_CARNE" +
-				"WHERE BREAKFAST=1 ORDER BY NAME";
-		return null;
+		return dbRows.getIngredientsMatrix();
 	}
 
 }

@@ -1,12 +1,12 @@
-package food;
+package com.fluffy_minions.prototype.food;
+
+import com.fluffy_minions.prototype.IDAS.IMeal;
+import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
+import com.fluffy_minions.prototype.needsCalculators.TotalNeedsCalculator;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-import IDAS.IMeal;
-import IDAS.TotalNeedsCalculator;
-import needsCalculators.PersonalProfile;
 
 /**
  * Created by sorin on 5/19/14.
@@ -50,7 +50,7 @@ public class DBRows implements IMeal {
 
     @Override
     public int[][] getIngredientsMatrix() {
-    	int[][] ingredients;
+    	int[][] ingredients = new int[getIngredients().length][14];
     	for(int i = 0;  i < this.getIngredients().length; i++) {
     		for(int j = 0;  j < rows.size(); j++) {
     			if(i == 0) {

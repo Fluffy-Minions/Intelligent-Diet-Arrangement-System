@@ -79,8 +79,6 @@ public class MainActivity extends Activity
         }
 
         IMeal meal = new Breakfast(sqLiteHelper);
-
-        LOGGER.info(String.valueOf(meal.getNames()));
     }
 
     @Override
