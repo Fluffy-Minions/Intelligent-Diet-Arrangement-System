@@ -33,6 +33,7 @@ public class DBRows {
 
 	public int[] getMinimumRequiredIngredients(PersonalProfile profile, int type) {
 		TotalNeedsCalculator calculator = new TotalNeedsCalculator();
+        calculator.setPersonalProfile(profile);
 		calculator.computeNeeds();
 		if (type == 1)			//if type breakfast
 			return new int[] {(int)calculator.getBreakfastCalories(), (int)calculator.getBreakfastFats(),
