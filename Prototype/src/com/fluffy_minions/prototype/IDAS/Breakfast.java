@@ -13,7 +13,7 @@ import com.fluffy_minions.prototype.food.DBRows;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 import com.fluffy_minions.prototype.needsCalculators.TotalNeedsCalculator;
 
-public class Breakfast implements IMeal, extends GenericMeal{
+public class Breakfast extends GenericMeal implements IMeal {
     private static final Logger LOGGER = Logger.getLogger(Breakfast.class.getName());
 
     public Breakfast(SQLiteHelper sqLiteHelper) {

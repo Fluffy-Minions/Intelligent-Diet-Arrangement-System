@@ -3,10 +3,14 @@ package com.fluffy_minions.prototype.IDAS;
 import java.util.Random;
 import java.util.logging.Logger;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import com.fluffy_minions.prototype.SQLiteHelper;
+import com.fluffy_minions.prototype.food.DBRow;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 import com.fluffy_minions.prototype.needsCalculators.TotalNeedsCalculator;
 
-public class Dinner implements IMeal, extends GenericMeal{
+public class Dinner extends GenericMeal implements IMeal {
     private static final Logger LOGGER = Logger.getLogger(Breakfast.class.getName());
 
     public Dinner(SQLiteHelper sqLiteHelper) {
