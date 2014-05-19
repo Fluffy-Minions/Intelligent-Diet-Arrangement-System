@@ -9,21 +9,21 @@ public class TotalNeedsCalculator {
 	private PersonalProfile profile;
 	private MealNeeds mealNeeds = new MealNeeds();
 	
-	double breakfastCalories;
-	double breakfastFiber;
-	double breakfastProteins;
-	double breakfastFats;
-	double breakfastCarbs;
-	double lunchCalories;
-	double lunchFiber;
-	double lunchProteins;
-	double lunchFats;
-	double lunchCarbs;
-	double dinnerCalories;
-	double dinnerFiber;
-	double dinnerProteins;
-	double dinnerFats;
-	double dinnerCarbs;
+	private double breakfastCalories;
+	private double breakfastFiber;
+	private double breakfastProteins;
+	private double breakfastFats;
+	private double breakfastCarbs;
+	private double lunchCalories;
+	private double lunchFiber;
+	private double lunchProteins;
+	private double lunchFats;
+	private double lunchCarbs;
+	private double dinnerCalories;
+	private double dinnerFiber;
+	private double dinnerProteins;
+	private double dinnerFats;
+	private double dinnerCarbs;
 
 	public double getNecessaryCalories(){
 		return caloriesCalculator.getTDEE();
@@ -41,120 +41,60 @@ public class TotalNeedsCalculator {
 		return breakfastCalories;
 	}
 
-	public void setBreakfastCalories(double breakfastCalories) {
-		this.breakfastCalories = breakfastCalories;
-	}
-
 	public double getBreakfastFiber() {
 		return breakfastFiber;
-	}
-
-	public void setBreakfastFiber(double breakfastFiber) {
-		this.breakfastFiber = breakfastFiber;
 	}
 
 	public double getBreakfastProteins() {
 		return breakfastProteins;
 	}
 
-	public void setBreakfastProteins(double breakfastProteins) {
-		this.breakfastProteins = breakfastProteins;
-	}
-
 	public double getBreakfastFats() {
 		return breakfastFats;
-	}
-
-	public void setBreakfastFats(double breakfastFats) {
-		this.breakfastFats = breakfastFats;
 	}
 
 	public double getBreakfastCarbs() {
 		return breakfastCarbs;
 	}
 
-	public void setBreakfastCarbs(double breakfastCarbs) {
-		this.breakfastCarbs = breakfastCarbs;
-	}
-
 	public double getLunchCalories() {
 		return lunchCalories;
-	}
-
-	public void setLunchCalories(double lunchCalories) {
-		this.lunchCalories = lunchCalories;
 	}
 
 	public double getLunchFiber() {
 		return lunchFiber;
 	}
 
-	public void setLunchFiber(double lunchFiber) {
-		this.lunchFiber = lunchFiber;
-	}
-
 	public double getLunchProteins() {
 		return lunchProteins;
-	}
-
-	public void setLunchProteins(double lunchProteins) {
-		this.lunchProteins = lunchProteins;
 	}
 
 	public double getLunchFats() {
 		return lunchFats;
 	}
 
-	public void setLunchFats(double lunchFats) {
-		this.lunchFats = lunchFats;
-	}
-
 	public double getLunchCarbs() {
 		return lunchCarbs;
-	}
-
-	public void setLunchCarbs(double lunchCarbs) {
-		this.lunchCarbs = lunchCarbs;
 	}
 
 	public double getDinnerCalories() {
 		return dinnerCalories;
 	}
 
-	public void setDinnerCalories(double dinnerCalories) {
-		this.dinnerCalories = dinnerCalories;
-	}
-
 	public double getDinnerFiber() {
 		return dinnerFiber;
-	}
-
-	public void setDinnerFiber(double dinnerFiber) {
-		this.dinnerFiber = dinnerFiber;
 	}
 
 	public double getDinnerProteins() {
 		return dinnerProteins;
 	}
 
-	public void setDinnerProteins(double dinnerProteins) {
-		this.dinnerProteins = dinnerProteins;
-	}
-
 	public double getDinnerFats() {
 		return dinnerFats;
 	}
 
-	public void setDinnerFats(double dinnerFats) {
-		this.dinnerFats = dinnerFats;
-	}
-
 	public double getDinnerCarbs() {
 		return dinnerCarbs;
-	}
-
-	public void setDinnerCarbs(double dinnerCarbs) {
-		this.dinnerCarbs = dinnerCarbs;
 	}
 
 	public double getNecessaryFats(){
