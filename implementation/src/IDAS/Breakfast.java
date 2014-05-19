@@ -5,17 +5,17 @@ import java.util.Random;
 import needsCalculators.PersonalProfile;
 import needsCalculators.TotalNeedsCalculator;
 
-public class Lunch implements IMeal {
+public class Breakfast implements IMeal{
 
 	@Override
 	public String[] getNames() {
 		String s = "SELECT NAME FROM BAUTURI, OUA, CEREALE, FRUCTE, LACTATE, LEGUME, PREPARATE_CARNE, PREPARATE_FARA_CARNE" +
-				"WHERE LUNCH=1 ORDER BY NAME";
+				"WHERE BREAKFAST=1 ORDER BY NAME";
 		return null;
 	}
 
 	@Override
-	public String[] getIngredients() {
+	public String[] getIngredients() { 
 		String s = "CALORIES, FATS, CARBS, FIBER, PROTEINS";
 		return null;
 	}
@@ -24,9 +24,9 @@ public class Lunch implements IMeal {
 	public int[] getMinimumRequiredIngredients(PersonalProfile profile) {
 		TotalNeedsCalculator calculator = new TotalNeedsCalculator();
 		calculator.computeNeeds();
-		return new int[] {(int)calculator.getLunchCalories(), (int)calculator.getLunchFats(),
-				(int)calculator.getLunchCarbs(), (int)calculator.getLunchFiber(), 
-				(int)calculator.getLunchProteins()};
+		return new int[] {(int)calculator.getBreakfastCalories(), (int)calculator.getBreakfastFats(),
+				(int)calculator.getBreakfastCarbs(), (int)calculator.getBreakfastFiber(), 
+				(int)calculator.getBreakfastProteins()};
 	}
 
 	@Override
@@ -39,9 +39,8 @@ public class Lunch implements IMeal {
 	public int[][] getIngredientsMatrix() {
 		String s = "SELECT NAME, CALORIES, FATS, CARBS, FIBER, PROTEINS " +
 				"FROM BAUTURI, OUA, CEREALE, FRUCTE, LACTATE, LEGUME, PREPARATE_CARNE, PREPARATE_FARA_CARNE" +
-				"WHERE LUNCH=1 ORDER BY NAME";
+				"WHERE BREAKFAST=1 ORDER BY NAME";
 		return null;
 	}
-
 
 }

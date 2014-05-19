@@ -1,5 +1,8 @@
 package IDAS;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 import needsCalculators.TotalCaloriesCalculator;
 
 public class AlgorithmManager {
@@ -8,7 +11,7 @@ public class AlgorithmManager {
 	private TotalCaloriesCalculator calculator;
 	
 	public static void main(String[] args){
-		
+
 	}
 
 }
