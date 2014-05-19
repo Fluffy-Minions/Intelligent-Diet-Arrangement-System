@@ -17,6 +17,8 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import com.fluffy_minions.prototype.IDAS.Breakfast;
+import com.fluffy_minions.prototype.IDAS.IMeal;
 
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -75,6 +77,10 @@ public class MainActivity extends Activity
             throw sqle;
 
         }
+
+        IMeal meal = new Breakfast(sqLiteHelper);
+
+        LOGGER.info(String.valueOf(meal.getNames()));
     }
 
     @Override
