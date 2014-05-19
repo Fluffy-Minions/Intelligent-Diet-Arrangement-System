@@ -59,7 +59,7 @@ public class DBRows {
 	}
 
 	public int[][] getIngredientsMatrix() {
-		int[][] ingredients = new int[getIngredients().length][14];
+		int[][] ingredients = new int[getIngredients().length][rows.size()];
 		for(int i = 0;  i < this.getIngredients().length; i++) {
 			for(int j = 0;  j < rows.size(); j++) {
 				if(i == 0) {
