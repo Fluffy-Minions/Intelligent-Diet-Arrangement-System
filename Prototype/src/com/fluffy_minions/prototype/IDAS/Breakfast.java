@@ -13,16 +13,14 @@ import com.fluffy_minions.prototype.food.DBRows;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 import com.fluffy_minions.prototype.needsCalculators.TotalNeedsCalculator;
 
-public class Breakfast implements IMeal{
+public class Breakfast implements IMeal, extends GenericMeal{
     private static final Logger LOGGER = Logger.getLogger(Breakfast.class.getName());
-    private String[] tables = new String[] { "BAUTURI", "OUA", "CEREALE", "FRUCTE", "LACTATE", "LEGUME", "PREPARATE_CARNE", "PREPARATE_FARA_CARNE" };
-    DBRows dbRows = new DBRows();
 
     public Breakfast(SQLiteHelper sqLiteHelper) {
 
         SQLiteDatabase db = sqLiteHelper.getReadableDatabase();
 
-        for(String table : tables) {
+        for(String table : this.getTables()) {
             Cursor c = db.rawQuery("SELECT * FROM " + table, null);
 
             int[] indexes = new int[] {
@@ -79,7 +77,7 @@ public class Breakfast implements IMeal{
 
 	@Override
 	public int[] getMinimumRequiredIngredients(PersonalProfile profile) {
-		return dbRows.getMinimumRequiredIngredients(profile);
+		return dbRows.getMinimumRequiredIngredients(profile, 1);
 	}
 
 	@Override
@@ -90,6 +88,11 @@ public class Breakfast implements IMeal{
 	@Override
 	public int[][] getIngredientsMatrix() {
 		return dbRows.getIngredientsMatrix();
+	}
+	
+	public String[] getTables(){
+		return new String[] { "BAUTURI", "OUA", "CEREALE", "FRUCTE", "LACTATE", "LEGUME", "PREPARATE_CARNE", "PREPARATE_FARA_CARNE"
+		};
 	}
 
 }
