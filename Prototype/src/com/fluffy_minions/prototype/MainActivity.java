@@ -3,6 +3,7 @@ package com.fluffy_minions.prototype;
 import android.app.*;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -49,6 +50,18 @@ public class MainActivity extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences pref = getSharedPreferences("profile", MODE_PRIVATE);
+        if(!pref.getString("gender", "").equals("")) {
+            personalProfile = new PersonalProfile();
+
+            personalProfile.setGender(pref.getString("gender", ""));
+            personalProfile.setActivityLevel(pref.getString("activity", ""));
+            personalProfile.setHeight(pref.getInt("height", 0));
+            personalProfile.setWeight(pref.getInt("weight", 0));
+            personalProfile.setAge(pref.getInt("age", 0));
+        }
+
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
