@@ -2,7 +2,17 @@ package com.fluffy_minions.prototype.needsCalculators;
 
 public class TotalProteinsCalculator {
 	private double proteins;
+	private double minProteins;
+	private double maxProteins;
 	
+	public double getMinProteins() {
+		return minProteins;
+	}
+
+	public double getMaxProteins() {
+		return maxProteins;
+	}
+
 	public double getProteins() {
 		return proteins;
 	}
@@ -28,5 +38,15 @@ public class TotalProteinsCalculator {
 		}
 		return proteins;
 	}	
+	
+	public double computeMinProteins() {
+		minProteins = 0.9 * proteins;
+		return minProteins;
+	}
+	
+	public double computeMaxProteins() {
+		maxProteins = 1.1 * proteins;
+		return maxProteins;
+	}
 	
 }
