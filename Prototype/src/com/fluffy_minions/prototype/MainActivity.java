@@ -29,7 +29,7 @@ public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
     private static final Logger LOGGER = Logger.getLogger(MainActivity.class.getName());
 
-    private PersonalProfile personalProfile = new PersonalProfile();
+    private PersonalProfile personalProfile;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -149,5 +149,9 @@ public class MainActivity extends Activity
 
     public PersonalProfile getPersonalProfile() {
         return personalProfile;
+    }
+
+    public void setPersonalProfile(PersonalProfile personalProfile) {
+        this.personalProfile = personalProfile;
     }
 }

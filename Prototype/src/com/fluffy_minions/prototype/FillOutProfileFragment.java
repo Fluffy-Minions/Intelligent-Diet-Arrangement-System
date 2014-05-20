@@ -65,13 +65,15 @@ public class FillOutProfileFragment extends Fragment {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PersonalProfile personalProfile = mainActivity.getPersonalProfile();
+                PersonalProfile personalProfile = new PersonalProfile();
 
                 personalProfile.setGender(genderSpinner.getSelectedItem().toString());
                 personalProfile.setActivityLevel(activitySpinner.getSelectedItem().toString());
                 personalProfile.setHeight(Double.parseDouble(heightEditText.getEditableText().toString()));
                 personalProfile.setWeight(Double.parseDouble(weightEditText.getEditableText().toString()));
                 personalProfile.setAge(Calendar.getInstance().get(Calendar.YEAR) - datePicker.getYear());
+
+                mainActivity.setPersonalProfile(personalProfile);
             }
         });
 

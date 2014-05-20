@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * Created by sorin on 3/24/14.
@@ -24,6 +25,11 @@ public class ViewMenuFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if(mMainActivity.getPersonalProfile() == null) {
+                    Toast.makeText(mMainActivity, "Please fill out your profile", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 Bundle args = new Bundle();
                 args.putString("day", (String)adapterView.getItemAtPosition(i));
 
