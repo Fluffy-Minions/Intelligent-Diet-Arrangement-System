@@ -13,10 +13,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" generated="true" />
     </content>
-    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="android-support-v4" level="project" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="library" name="jacop-4.0.0" level="project" />
+    <orderEntry type="module" module-name="JakeWharton-ActionBarSherlock-5a15d92" />
   </component>
 </module>
 
