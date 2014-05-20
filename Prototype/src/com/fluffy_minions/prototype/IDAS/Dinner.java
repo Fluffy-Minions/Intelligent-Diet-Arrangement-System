@@ -70,7 +70,7 @@ public class Dinner extends GenericMeal implements IMeal {
 
         names = dbRows.getNames();
         ingredients = dbRows.getIngredients();
-        minimumRequiredIngredients = dbRows.getMinimumRequiredIngredients(personalProfile, 1);
+        minimumRequiredIngredients = dbRows.getMinimumRequiredIngredients(personalProfile, 3);
         prices = dbRows.getPrices();
         ingredientsMatrix = dbRows.getIngredientsMatrix();
 
@@ -81,13 +81,14 @@ public class Dinner extends GenericMeal implements IMeal {
 
         Random random = new Random();
         List<Integer> randoms = new ArrayList<>();
+        int rnd = 0;
 
         for(int i = 0; i < size; ++i) {
-            int rnd = random.nextInt(names.length);
+            do {
+                rnd = random.nextInt(names.length);
+            } while(randoms.contains(rnd));
 
-            if(!randoms.contains(rnd)) {
-                randoms.add(rnd);
-            }
+            randoms.add(rnd);
         }
 
         for(int i = 0; i < size; ++i) {

@@ -82,13 +82,24 @@ public class Menu extends Fragment {
         boolean result = search.labeling(store, select);
 
         String s = "";
+        int[] total = new int[ingredients.length];
 
         for(int i = 0; i < m; ++i) {
             LOGGER.info(food[i] + ": " + x[i].value());
 
             if(x[i].value() != 0) {
-                s += food[i] + "3 x " + x[i].value() + "\n";
+                s += x[i].value() + " x " + food[i] + "\n";
+
+                for(int k = 0; k < ingredients.length; ++k) {
+                    total[k] += matrix[k][i];
+                }
             }
+        }
+
+        s += "\nTOTAL\n";
+
+        for(int i = 0; i < ingredients.length; ++i) {
+            s += ingredients[i] + ": " + total[i] + "\n";
         }
 
         textView.setText(s);

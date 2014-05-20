@@ -84,7 +84,7 @@ public class Lunch extends GenericMeal implements IMeal {
         List<Integer> randoms = new ArrayList<>();
 
         for(int i = 0; i < size; ++i) {
-            int rnd = random.nextInt(names.length);
+            int rnd = random.nextInt(names.length - 1);
 
             if(!randoms.contains(rnd)) {
                 randoms.add(rnd);
