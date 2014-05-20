@@ -1,6 +1,7 @@
 package com.fluffy_minions.prototype.IDAS;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
@@ -15,8 +16,13 @@ import com.fluffy_minions.prototype.needsCalculators.TotalNeedsCalculator;
 
 public class Breakfast extends GenericMeal implements IMeal {
     private static final Logger LOGGER = Logger.getLogger(Breakfast.class.getName());
+    private String[] names;
+    private String[] ingredients;
+    private int[] minimumRequiredIngredients;
+    private int[] prices;
+    private int[][] ingredientsMatrix;
 
-    public Breakfast(SQLiteHelper sqLiteHelper) {
+    public Breakfast(SQLiteHelper sqLiteHelper, PersonalProfile personalProfile) {
 
         SQLiteDatabase db = sqLiteHelper.getReadableDatabase();
 
@@ -63,31 +69,74 @@ public class Breakfast extends GenericMeal implements IMeal {
 
             c.close();
         }
+
+        names = dbRows.getNames();
+        ingredients = dbRows.getIngredients();
+        minimumRequiredIngredients = dbRows.getMinimumRequiredIngredients(personalProfile, 1);
+        prices = dbRows.getPrices();
+        ingredientsMatrix = dbRows.getIngredientsMatrix();
+
+        int size = 20;
+        String[] newNames = new String[size];
+        int[] newPrices = new int[size];
+        int[][] newMatrix = new int[ingredients.length][size];
+
+        Random random = new Random();
+        List<Integer> randoms = new ArrayList<>();
+
+        for(int i = 0; i < size; ++i) {
+            int rnd = random.nextInt(names.length);
+
+            if(!randoms.contains(rnd)) {
+                randoms.add(rnd);
+            }
+        }
+
+        for(int i = 0; i < size; ++i) {
+            newNames[i] = names[randoms.get(i)];
+            newPrices[i] = prices[randoms.get(i)];
+
+            for(int k = 0; k < ingredients.length; ++k) {
+                newMatrix[k][i] = ingredientsMatrix[k][randoms.get(i)];
+            }
+        }
+
+        names = newNames;
+        prices = newPrices;
+        ingredientsMatrix = newMatrix;
+
+  //      names = Arrays.copyOfRange(names, x, y);
+//        minimumRequiredIngredients = Arrays.copyOfRange(minimumRequiredIngredients, x, y);
+    //    prices = Arrays.copyOfRange(prices, x, y);
+
+      //  for(int i = 0; i < ingredients.length; ++i) {
+        //    ingredientsMatrix[i] = Arrays.copyOfRange(ingredientsMatrix[i], x, y);
+        //}
     }
 
 	@Override
 	public String[] getNames() {
-           return dbRows.getNames();
+           return names;
 	}
 
 	@Override
 	public String[] getIngredients() { 
-		return dbRows.getIngredients();
+		return ingredients;
 	}
 
 	@Override
 	public int[] getMinimumRequiredIngredients(PersonalProfile profile) {
-		return dbRows.getMinimumRequiredIngredients(profile, 1);
+		return minimumRequiredIngredients;
 	}
 
 	@Override
 	public int[] getPrices() {
-        return dbRows.getPrices();
+        return prices;
 	}
 
 	@Override
 	public int[][] getIngredientsMatrix() {
-		return dbRows.getIngredientsMatrix();
+		return ingredientsMatrix;
 	}
 	
 	public String[] getTables(){

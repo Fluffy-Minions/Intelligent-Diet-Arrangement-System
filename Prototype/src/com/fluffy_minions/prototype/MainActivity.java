@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.fluffy_minions.prototype.IDAS.Breakfast;
 import com.fluffy_minions.prototype.IDAS.IMeal;
+import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -27,6 +28,8 @@ import java.util.logging.Logger;
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
     private static final Logger LOGGER = Logger.getLogger(MainActivity.class.getName());
+
+    private PersonalProfile personalProfile = new PersonalProfile();
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -38,7 +41,9 @@ public class MainActivity extends Activity
      */
     private CharSequence mTitle;
 
-    SQLiteHelper sqLiteHelper;
+    private SQLiteHelper sqLiteHelper;
+
+    public SQLiteHelper getSqLiteHelper() { return sqLiteHelper; }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +82,6 @@ public class MainActivity extends Activity
             throw sqle;
 
         }
-
-        IMeal meal = new Breakfast(sqLiteHelper);
     }
 
     @Override
@@ -144,4 +147,7 @@ public class MainActivity extends Activity
         fragmentTransaction.commit();
     }
 
+    public PersonalProfile getPersonalProfile() {
+        return personalProfile;
+    }
 }

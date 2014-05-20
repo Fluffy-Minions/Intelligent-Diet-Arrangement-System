@@ -1,5 +1,7 @@
 package com.fluffy_minions.prototype.IDAS;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
 
@@ -13,7 +15,13 @@ import com.fluffy_minions.prototype.needsCalculators.TotalNeedsCalculator;
 public class Lunch extends GenericMeal implements IMeal {
     private static final Logger LOGGER = Logger.getLogger(Breakfast.class.getName());
 
-    public Lunch(SQLiteHelper sqLiteHelper) {
+    private String[] names;
+    private String[] ingredients;
+    private int[] minimumRequiredIngredients;
+    private int[] prices;
+    private int[][] ingredientsMatrix;
+
+    public Lunch(SQLiteHelper sqLiteHelper, PersonalProfile profile) {
 
         SQLiteDatabase db = sqLiteHelper.getReadableDatabase();
 
@@ -60,32 +68,68 @@ public class Lunch extends GenericMeal implements IMeal {
 
             c.close();
         }
+
+        names = dbRows.getNames();
+        ingredients = dbRows.getIngredients();
+        minimumRequiredIngredients = dbRows.getMinimumRequiredIngredients(profile, 2);
+        prices = dbRows.getPrices();
+        ingredientsMatrix = dbRows.getIngredientsMatrix();
+
+        int size = 20;
+        String[] newNames = new String[size];
+        int[] newPrices = new int[size];
+        int[][] newMatrix = new int[ingredients.length][size];
+
+        Random random = new Random();
+        List<Integer> randoms = new ArrayList<>();
+
+        for(int i = 0; i < size; ++i) {
+            int rnd = random.nextInt(names.length);
+
+            if(!randoms.contains(rnd)) {
+                randoms.add(rnd);
+            }
+        }
+
+        for(int i = 0; i < size; ++i) {
+            newNames[i] = names[randoms.get(i)];
+            newPrices[i] = prices[randoms.get(i)];
+
+            for(int k = 0; k < ingredients.length; ++k) {
+                newMatrix[k][i] = ingredientsMatrix[k][randoms.get(i)];
+            }
+        }
+
+        names = newNames;
+        prices = newPrices;
+        ingredientsMatrix = newMatrix;
+
     }
 
-	@Override
-	public String[] getNames() {
-           return dbRows.getNames();
-	}
+    @Override
+    public String[] getNames() {
+        return names;
+    }
 
-	@Override
-	public String[] getIngredients() { 
-		return dbRows.getIngredients();
-	}
+    @Override
+    public String[] getIngredients() {
+        return ingredients;
+    }
 
-	@Override
-	public int[] getMinimumRequiredIngredients(PersonalProfile profile) {
-		return dbRows.getMinimumRequiredIngredients(profile, 2);
-	}
+    @Override
+    public int[] getMinimumRequiredIngredients(PersonalProfile profile) {
+        return minimumRequiredIngredients;
+    }
 
-	@Override
-	public int[] getPrices() {
-        return dbRows.getPrices();
-	}
+    @Override
+    public int[] getPrices() {
+        return prices;
+    }
 
-	@Override
-	public int[][] getIngredientsMatrix() {
-		return dbRows.getIngredientsMatrix();
-	}
+    @Override
+    public int[][] getIngredientsMatrix() {
+        return ingredientsMatrix;
+    }
 
 	public String[] getTables(){
 		return new String[] { "CIORBE", "BAUTURI", "CEREALE", "DULCIURI", "FRUCTE", "GUILTY_PLEASURES", "LEGUME", "PREPARATE_CARNE", "PREPARATE_FARA_CARNE"};

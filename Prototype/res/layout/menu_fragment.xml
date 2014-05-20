@@ -39,12 +39,12 @@
 						android:layout_height="wrap_content"
 						android:textAppearance="?android:attr/textAppearanceMedium"
 						android:text="Belvita biscuits with extra vitamins - 128 Kcal"
-						android:id="@+id/textView"
+						android:id="@+id/breakfast_textView"
 						android:layout_gravity="center_horizontal"
 						android:layout_marginTop="6dp"
 						android:layout_marginBottom="6dp" />
 
-					<TextView
+					<!--<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:textAppearance="?android:attr/textAppearanceMedium"
@@ -63,7 +63,7 @@
 						android:layout_gravity="center_horizontal"
 						android:textColor="@android:color/holo_blue_light"
 						android:layout_marginTop="6dp"
-						android:layout_marginBottom="6dp" />
+						android:layout_marginBottom="6dp" />-->
 				</LinearLayout>
 
 				<LinearLayout
@@ -75,14 +75,13 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+                        android:id="@+id/lunch_textView"
 						android:textAppearance="?android:attr/textAppearanceMedium"
-						android:text="Caltaboș cu rântaș și figărui - 1024 Kcal"
-						android:id="@+id/textView54"
 						android:layout_gravity="center_horizontal"
 						android:layout_marginTop="6dp"
 						android:layout_marginBottom="6dp" />
 
-					<TextView
+					<!--<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:textAppearance="?android:attr/textAppearanceMedium"
@@ -100,7 +99,7 @@
 						android:id="@+id/textView37"
 						android:layout_gravity="center_horizontal"
 						android:layout_marginTop="6dp"
-						android:layout_marginBottom="6dp" />
+						android:layout_marginBottom="6dp" />-->
 					</LinearLayout>
 
 
@@ -115,13 +114,12 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:textAppearance="?android:attr/textAppearanceMedium"
-					android:text="Pastramă prăjită cu sirop de prune (128 Kcal)"
-					android:id="@+id/textView4"
+                    android:id="@+id/dinner_textView"
 					android:layout_gravity="center_horizontal"
 					android:layout_marginTop="6dp"
 					android:layout_marginBottom="6dp" />
 
-					<TextView
+					<!--<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:textAppearance="?android:attr/textAppearanceMedium"
@@ -139,7 +137,7 @@
 						android:id="@+id/textView33"
 						android:layout_gravity="center_horizontal"
 						android:layout_marginTop="6dp"
-						android:layout_marginBottom="6dp" /></LinearLayout>
+						android:layout_marginBottom="6dp" />--></LinearLayout>
 			</FrameLayout>
 		</LinearLayout>
 	</TabHost>
