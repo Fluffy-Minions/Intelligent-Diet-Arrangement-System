@@ -7,6 +7,7 @@ import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.actionbarsherlock.app.SherlockFragment;
 
 /**
  * Created by sorin on 3/24/14.
@@ -33,7 +34,7 @@ public class ViewMenuFragment extends Fragment {
                 Bundle args = new Bundle();
                 args.putString("day", (String)adapterView.getItemAtPosition(i));
 
-                Fragment fragment = new Menu();
+                 Fragment fragment = new Menu();
                 fragment.setArguments(args);
 
                 mMainActivity.replaceFragmentWith(fragment, (String)adapterView.getItemAtPosition(i));
@@ -50,10 +51,10 @@ public class ViewMenuFragment extends Fragment {
         mMainActivity = (MainActivity) activity;
     }
 
-    @Override
+    /*@Override
     public void onCreateOptionsMenu(android.view.Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
         inflater.inflate(R.menu.view_menu_menu, menu);
-    }
+    }*/
 }

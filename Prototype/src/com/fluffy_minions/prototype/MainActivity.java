@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import com.actionbarsherlock.app.SherlockActivity;
 import com.fluffy_minions.prototype.IDAS.Breakfast;
 import com.fluffy_minions.prototype.IDAS.IMeal;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
@@ -26,7 +27,7 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 
-public class MainActivity extends Activity
+public class MainActivity extends SherlockActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
     private static final Logger LOGGER = Logger.getLogger(MainActivity.class.getName());
 
@@ -120,7 +121,7 @@ public class MainActivity extends Activity
     }
 
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
             // Only show items in the action bar relevant to this screen
@@ -143,7 +144,7 @@ public class MainActivity extends Activity
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     public void replaceFragmentWith(Fragment fragment, String title) {
         FragmentManager fragmentManager = getFragmentManager();

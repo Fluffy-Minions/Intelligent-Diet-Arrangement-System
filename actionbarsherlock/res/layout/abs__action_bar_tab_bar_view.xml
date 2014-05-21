@@ -3,4 +3,4 @@
 <com.actionbarsherlock.internal.widget.TabsLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="?attr/actionBarTabBarStyle"
-    />
+/>

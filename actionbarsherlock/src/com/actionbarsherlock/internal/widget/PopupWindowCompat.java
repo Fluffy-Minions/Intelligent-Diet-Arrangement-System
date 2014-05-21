@@ -13,7 +13,7 @@ import android.widget.PopupWindow;
 /**
  * Works around bugs in the handling of {@link ViewTreeObserver} by
  * {@link PopupWindow}.
- * <p/>
+ * <p>
  * <code>PopupWindow</code> registers an {@link OnScrollChangedListener} with
  * {@link ViewTreeObserver}, but does not keep a reference to the observer
  * instance that it has registers on. This is problematic when the anchor view
@@ -22,7 +22,7 @@ import android.widget.PopupWindow;
  * by the <code>ViewRoot</code> to a floating one, meaning
  * <code>PopupWindow</code> cannot unregister it's listener anymore and has
  * leaked it into the global observer.
- * <p/>
+ * <p>
  * This class works around this issue by
  * <ul>
  * <li>replacing <code>PopupWindow.mOnScrollChangedListener</code> with a no-op
@@ -39,7 +39,6 @@ import android.widget.PopupWindow;
 public class PopupWindowCompat extends PopupWindow {
 
     private static final Field superListenerField;
-
     static {
         Field f = null;
         try {

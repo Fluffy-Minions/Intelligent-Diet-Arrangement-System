@@ -226,7 +226,7 @@ public class ActionBarSherlockNative extends ActionBarSherlock {
             mActionMode = null;
         }
         if (mActivity instanceof OnActionModeStartedListener && mActionMode != null) {
-            ((OnActionModeStartedListener) mActivity).onActionModeStarted(mActionMode);
+            ((OnActionModeStartedListener)mActivity).onActionModeStarted(mActionMode);
         }
 
         return mActionMode;
@@ -261,7 +261,7 @@ public class ActionBarSherlockNative extends ActionBarSherlock {
         public void onDestroyActionMode(android.view.ActionMode mode) {
             mCallback.onDestroyActionMode(mActionMode);
             if (mActivity instanceof OnActionModeFinishedListener) {
-                ((OnActionModeFinishedListener) mActivity).onActionModeFinished(mActionMode);
+                ((OnActionModeFinishedListener)mActivity).onActionModeFinished(mActionMode);
             }
         }
     }
