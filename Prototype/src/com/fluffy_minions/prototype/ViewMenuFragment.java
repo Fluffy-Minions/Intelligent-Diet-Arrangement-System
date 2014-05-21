@@ -12,7 +12,7 @@ import com.actionbarsherlock.app.SherlockFragment;
 /**
  * Created by sorin on 3/24/14.
  */
-public class ViewMenuFragment extends Fragment {
+public class ViewMenuFragment extends SherlockFragment {
     private MainActivity mMainActivity;
 
     @Override
@@ -34,7 +34,7 @@ public class ViewMenuFragment extends Fragment {
                 Bundle args = new Bundle();
                 args.putString("day", (String)adapterView.getItemAtPosition(i));
 
-                 Fragment fragment = new Menu();
+                 SherlockFragment fragment = new Menu();
                 fragment.setArguments(args);
 
                 mMainActivity.replaceFragmentWith(fragment, (String)adapterView.getItemAtPosition(i));

@@ -22,7 +22,7 @@ import java.util.Calendar;
 /**
  * Created by sorin on 3/24/14.
  */
-public class FillOutProfileFragment extends Fragment {
+public class FillOutProfileFragment extends SherlockFragment {
     private Spinner genderSpinner;
     private Spinner activitySpinner;
     private EditText heightEditText;

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TabHost;
 import android.widget.TextView;
+import com.actionbarsherlock.app.SherlockFragment;
 import com.fluffy_minions.prototype.IDAS.*;
 import org.jacop.constraints.SumWeight;
 import org.jacop.constraints.XgteqC;
@@ -24,7 +25,7 @@ import java.util.logging.Logger;
 /**
  * Created by sorin on 3/24/14.
  */
-public class Menu extends Fragment {
+public class Menu extends SherlockFragment {
     private Logger LOGGER = Logger.getLogger(Menu.class.getName());
     private MainActivity mainActivity;
 

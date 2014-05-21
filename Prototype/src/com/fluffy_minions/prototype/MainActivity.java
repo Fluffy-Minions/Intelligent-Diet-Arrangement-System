@@ -1,7 +1,6 @@
 package com.fluffy_minions.prototype;
 
-import android.app.*;
-
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -9,6 +8,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,6 +20,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockFragment;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.fluffy_minions.prototype.IDAS.Breakfast;
 import com.fluffy_minions.prototype.IDAS.IMeal;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
@@ -27,7 +30,7 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 
-public class MainActivity extends SherlockActivity
+public class MainActivity extends SherlockFragmentActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
     private static final Logger LOGGER = Logger.getLogger(MainActivity.class.getName());
 
@@ -65,7 +68,7 @@ public class MainActivity extends SherlockActivity
 
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getFragmentManager().findFragmentById(R.id.navigation_drawer);
+                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
         // replaceFragmentWith(new FillOutProfileFragment(), "Fill out profile");
@@ -146,8 +149,8 @@ public class MainActivity extends SherlockActivity
         return super.onOptionsItemSelected(item);
     }*/
 
-    public void replaceFragmentWith(Fragment fragment, String title) {
-        FragmentManager fragmentManager = getFragmentManager();
+    public void replaceFragmentWith(SherlockFragment fragment, String title) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
