@@ -83,13 +83,13 @@ public class Breakfast extends GenericMeal implements IMeal {
 
         Random random = new Random();
         List<Integer> randoms = new ArrayList<>();
-
+        int rnd = 0;
         for(int i = 0; i < size; ++i) {
-            int rnd = random.nextInt(names.length);
+            do {
+                rnd = random.nextInt(names.length);
+            } while(randoms.contains(rnd));
 
-            if(!randoms.contains(rnd)) {
-                randoms.add(rnd);
-            }
+            randoms.add(rnd);
         }
 
         for(int i = 0; i < size; ++i) {

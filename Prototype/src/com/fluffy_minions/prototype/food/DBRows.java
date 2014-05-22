@@ -57,9 +57,9 @@ public class DBRows {
 		Random random = new Random();
 
         int[] prices = new int[getNames().length];
-
+        int price = random.nextInt(50);
         for(int i = 0; i < prices.length; ++i) {
-            prices[i] = random.nextInt(50) + 1;
+            prices[i] = price + 1;
         }
 
         return prices;

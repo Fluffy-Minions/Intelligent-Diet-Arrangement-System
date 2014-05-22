@@ -1,6 +1,7 @@
 package com.fluffy_minions.prototype;
 
 import com.fluffy_minions.prototype.IDAS.IMeal;
+import com.fluffy_minions.prototype.IDAS.Meal;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 import org.jacop.constraints.SumWeight;
 import org.jacop.core.IntDomain;
@@ -10,18 +11,19 @@ import org.jacop.search.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created by sorin on 5/22/14.
  */
 public class JacopWizard {
-    public String invokeTheGods(IMeal meal, PersonalProfile personalProfile) {
+    public String invokeTheGods(IMeal meal, PersonalProfile personalProfile, Logger logger) {
         String[] food = meal.getNames();
         String[] ingredients = meal.getIngredients();
         int[] price = meal.getPrices();
         int[] limits = meal.getMinimumRequiredIngredients(personalProfile);
         int[][] matrix = meal.getIngredientsMatrix();
-
+        logger.info(meal.getClass().getName());
         int m = food.length;
         int n = ingredients.length;
 
@@ -66,13 +68,26 @@ public class JacopWizard {
 
         for(int i = 0; i < m; ++i) {
             if(x[i].value() != 0) {
+                String a = food[i] + ": ";
+
                 s += x[i].value() + " x " + food[i] + "\n";
 
                 for(int k = 0; k < ingredients.length; ++k) {
+                    a += ingredients[k] + " = " + matrix[k][i] +", ";
                     total[k] += matrix[k][i];
+                    // logger.info(limits[k] + " ");
                 }
+
+                logger.warning(a);
             }
         }
+
+        String lmt = "";
+        for(int i = 0; i < n; ++i) {
+            lmt += ingredients[i] + " = " + limits[i] + ", ";
+        }
+
+        logger.warning(lmt);
 
         s += "\nTOTAL\n";
 

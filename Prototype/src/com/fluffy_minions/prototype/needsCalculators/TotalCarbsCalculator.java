@@ -26,13 +26,13 @@ public class TotalCarbsCalculator {
 		return carbs;
 	}
 	
-	public double computeMinCarbs() {
-		minCarbs = 0.9 * carbs;
+	public double computeMinCarbs(double calories) {
+		minCarbs = 0.9 * this.computeCarbs(calories);
 		return minCarbs;
 	}
 	
-	public double computeMaxCarbs() {
-		maxCarbs = 1.1 * carbs;
+	public double computeMaxCarbs(double calories) {
+		maxCarbs = 1.1 * this.computeCarbs(calories);
 		return maxCarbs;
 	}
 }

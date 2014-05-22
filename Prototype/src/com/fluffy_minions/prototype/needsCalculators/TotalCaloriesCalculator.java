@@ -73,8 +73,8 @@ public class TotalCaloriesCalculator {
 		return bmi;
 	}
 
-	public double computeMinCalories() {
-		minCalories = 0.9 * finalTDEE;
+	public double computeMinCalories(PersonalProfile profile) {
+		minCalories = 0.9 * this.computeTDEE(profile);
 		return minCalories;
 	}
 	

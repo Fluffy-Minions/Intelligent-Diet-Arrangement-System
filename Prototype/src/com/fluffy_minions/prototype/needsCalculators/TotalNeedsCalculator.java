@@ -109,11 +109,11 @@ public class TotalNeedsCalculator {
 	}
 
 	public void computeNeeds(){
-		double totalCalories = caloriesCalculator.computeTDEE(profile);
-		double totalFiber = fiberCalculator.computeFiber(totalCalories);
-		double totalProteins = proteinsCalculator.computeProteins(profile);
-		double totalFats = fatsCalculator.computeFats(totalCalories);
-		double totalCarbs = carbsCalculator.computeCarbs(totalCalories);
+		double totalCalories = caloriesCalculator.computeMinCalories(profile);
+		double totalFiber = fiberCalculator.computeMinFiber(totalCalories);
+		double totalProteins = proteinsCalculator.computeMinProteins(profile);
+		double totalFats = fatsCalculator.computeMinFats(totalCalories);
+		double totalCarbs = carbsCalculator.computeMinCarbs(totalCalories);
 
 		breakfastCalories = mealNeeds.computeNeeds(0.3, totalCalories);
 		breakfastFiber = mealNeeds.computeNeeds(0.3, totalFiber);

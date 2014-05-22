@@ -26,13 +26,13 @@ public class TotalFiberCalculator {
 		return fiber;
 	}
 	
-	public double computeMinFiber() {
-		minFiber = 0.9 * fiber;
+	public double computeMinFiber(double calories) {
+		minFiber = 0.9 * this.computeFiber(calories);
 		return minFiber;
 	}
 	
-	public double computeMaxFiber() {
-		maxFiber = 1.1 * fiber;
+	public double computeMaxFiber(double calories) {
+		maxFiber = 1.1 * this.computeFiber(calories);
 		return maxFiber;
 	}
 

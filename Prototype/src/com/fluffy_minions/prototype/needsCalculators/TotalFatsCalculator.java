@@ -26,13 +26,13 @@ public class TotalFatsCalculator {
 		return fats;	
 	}
 	
-	public double computeMinFats() {
-		minFats = 0.9 * fats;
+	public double computeMinFats(double calories) {
+		minFats = 0.9 * this.computeFats(calories);
 		return minFats;
 	}
 	
-	public double computeMaxFats() {
-		maxFats = 1.1 * fats;
+	public double computeMaxFats(double calories) {
+		maxFats = 1.1 * this.computeFats(calories);
 		return maxFats;
 	}
 }

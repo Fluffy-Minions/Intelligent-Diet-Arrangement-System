@@ -58,7 +58,7 @@ public class Menu extends SherlockFragment {
         spec1.setIndicator("Breakfast");
 
         TextView breakfast = (TextView) view.findViewById(R.id.breakfast_textView);
-        breakfast.setText(jacopWizard.invokeTheGods(breakfastMeal, personalProfile));
+        breakfast.setText(jacopWizard.invokeTheGods(breakfastMeal, personalProfile, LOGGER));
         //set(breakfastMeal, breakfast);
 
         TabHost.TabSpec spec2=tabHost.newTabSpec("Tab 2");
@@ -66,7 +66,7 @@ public class Menu extends SherlockFragment {
         spec2.setContent(R.id.tab2);
 
         TextView lunch = (TextView) view.findViewById(R.id.lunch_textView);
-        lunch.setText(jacopWizard.invokeTheGods(lunchMeal, personalProfile));
+        lunch.setText(jacopWizard.invokeTheGods(lunchMeal, personalProfile, LOGGER));
         // set(lunchMeal, lunch);
 
         TabHost.TabSpec spec3=tabHost.newTabSpec("Tab 3");
@@ -74,7 +74,7 @@ public class Menu extends SherlockFragment {
         spec3.setContent(R.id.tab3);
 
         TextView dinner = (TextView) view.findViewById(R.id.dinner_textView);
-        dinner.setText(jacopWizard.invokeTheGods(dinnerMeal, personalProfile));
+        dinner.setText(jacopWizard.invokeTheGods(dinnerMeal, personalProfile, LOGGER));
         // set(dinnerMeal, dinner);
 
         tabHost.addTab(spec1);

@@ -39,13 +39,13 @@ public class TotalProteinsCalculator {
 		return proteins;
 	}	
 	
-	public double computeMinProteins() {
-		minProteins = 0.9 * proteins;
+	public double computeMinProteins(PersonalProfile profile) {
+		minProteins = 0.9 * this.computeProteins(profile);
 		return minProteins;
 	}
 	
-	public double computeMaxProteins() {
-		maxProteins = 1.1 * proteins;
+	public double computeMaxProteins(PersonalProfile profile) {
+		maxProteins = 1.1 * this.computeProteins(profile);
 		return maxProteins;
 	}
 	
