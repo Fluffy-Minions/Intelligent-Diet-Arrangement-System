@@ -108,7 +108,7 @@ public class TotalNeedsCalculator {
 		this.profile = personalProfile;
 	}
 
-	public void computeNeeds(){
+	public void computeMinNeeds(){
 		double totalCalories = caloriesCalculator.computeMinCalories(profile);
 		double totalFiber = fiberCalculator.computeMinFiber(totalCalories);
 		double totalProteins = proteinsCalculator.computeMinProteins(profile);
@@ -134,5 +134,32 @@ public class TotalNeedsCalculator {
 		dinnerCarbs = mealNeeds.computeNeeds(0.25, totalCarbs);
 
 	}
+
+    public void computeMaxNeeds(){
+        double totalCalories = caloriesCalculator.computeMaxCalories(profile);
+        double totalFiber = fiberCalculator.computeMaxFiber(totalCalories);
+        double totalProteins = proteinsCalculator.computeMaxProteins(profile);
+        double totalFats = fatsCalculator.computeMaxFats(totalCalories);
+        double totalCarbs = carbsCalculator.computeMaxCarbs(totalCalories);
+
+        breakfastCalories = mealNeeds.computeNeeds(0.3, totalCalories);
+        breakfastFiber = mealNeeds.computeNeeds(0.3, totalFiber);
+        breakfastProteins = mealNeeds.computeNeeds(0.3, totalProteins);
+        breakfastFats = mealNeeds.computeNeeds(0.3, totalFats);
+        breakfastCarbs = mealNeeds.computeNeeds(0.3, totalCarbs);
+
+        lunchCalories = mealNeeds.computeNeeds(0.45, totalCalories);
+        lunchFiber = mealNeeds.computeNeeds(0.45, totalFiber);
+        lunchProteins = mealNeeds.computeNeeds(0.45, totalProteins);
+        lunchFats = mealNeeds.computeNeeds(0.45, totalFats);
+        lunchCarbs = mealNeeds.computeNeeds(0.45, totalCarbs);
+
+        dinnerCalories = mealNeeds.computeNeeds(0.25, totalCalories);
+        dinnerFiber = mealNeeds.computeNeeds(0.25, totalFiber);
+        dinnerProteins = mealNeeds.computeNeeds(0.25, totalProteins);
+        dinnerFats = mealNeeds.computeNeeds(0.25, totalFats);
+        dinnerCarbs = mealNeeds.computeNeeds(0.25, totalCarbs);
+
+    }
 
 }

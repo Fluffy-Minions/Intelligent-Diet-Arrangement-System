@@ -18,6 +18,7 @@ public class Lunch extends GenericMeal implements IMeal {
     private String[] names;
     private String[] ingredients;
     private int[] minimumRequiredIngredients;
+    private int[] maximumRequiredIngredients;
     private int[] prices;
     private int[][] ingredientsMatrix;
 
@@ -72,6 +73,7 @@ public class Lunch extends GenericMeal implements IMeal {
         names = dbRows.getNames();
         ingredients = dbRows.getIngredients();
         minimumRequiredIngredients = dbRows.getMinimumRequiredIngredients(profile, 2);
+        maximumRequiredIngredients = dbRows.getMaximumRequiredIngredients(profile, 2);
         prices = dbRows.getPrices();
         ingredientsMatrix = dbRows.getIngredientsMatrix();
 
@@ -120,6 +122,9 @@ public class Lunch extends GenericMeal implements IMeal {
     public int[] getMinimumRequiredIngredients(PersonalProfile profile) {
         return minimumRequiredIngredients;
     }
+
+    @Override
+    public int[] getMaximumRequiredIngredients(PersonalProfile profile) { return maximumRequiredIngredients; }
 
     @Override
     public int[] getPrices() {

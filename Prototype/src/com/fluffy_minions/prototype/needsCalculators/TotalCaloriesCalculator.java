@@ -40,6 +40,7 @@ public class TotalCaloriesCalculator {
 	public double computeTDEE(PersonalProfile profile)
 	{
 		bmr = this.computeBMR(profile);
+        bmi = this.computeBMI(profile);
 		switch (profile.getActivityLevel())
 		{
 		case "Sedentary": 
@@ -78,8 +79,8 @@ public class TotalCaloriesCalculator {
 		return minCalories;
 	}
 	
-	public double computeMaxCalories() {
-		maxCalories = 1.1 * finalTDEE;
+	public double computeMaxCalories(PersonalProfile profile) {
+		maxCalories = 1.1 * this.computeTDEE(profile);
 		return maxCalories;
 	}
 	

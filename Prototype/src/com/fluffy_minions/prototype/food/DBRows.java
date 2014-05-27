@@ -1,6 +1,5 @@
 package com.fluffy_minions.prototype.food;
 
-import com.fluffy_minions.prototype.IDAS.IMeal;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 import com.fluffy_minions.prototype.needsCalculators.TotalNeedsCalculator;
 
@@ -59,7 +58,7 @@ public class DBRows {
 	public int[] getMinimumRequiredIngredients(PersonalProfile profile, int type) {
 		TotalNeedsCalculator calculator = new TotalNeedsCalculator();
         calculator.setPersonalProfile(profile);
-		calculator.computeNeeds();
+		calculator.computeMinNeeds();
 		if (type == 1)			//if type breakfast
 			return new int[] {(int)calculator.getBreakfastCalories(), (int)calculator.getBreakfastFats(),
 				(int)calculator.getBreakfastCarbs(), (int)calculator.getBreakfastFiber(), 
@@ -77,6 +76,31 @@ public class DBRows {
 					(int)calculator.getDinnerProteins()};
 
 	}
+
+    /**
+     * This method returns the maximum daily requirement for every ingredient.
+     */
+    public int[] getMaximumRequiredIngredients(PersonalProfile profile, int type) {
+        TotalNeedsCalculator calculator = new TotalNeedsCalculator();
+        calculator.setPersonalProfile(profile);
+        calculator.computeMaxNeeds();
+        if (type == 1)			//if type breakfast
+            return new int[] {(int)calculator.getBreakfastCalories(), (int)calculator.getBreakfastFats(),
+                    (int)calculator.getBreakfastCarbs(), (int)calculator.getBreakfastFiber(),
+                    (int)calculator.getBreakfastProteins()};
+
+        else
+        if(type ==2)		//if type lunch
+            return new int[] {(int)calculator.getLunchCalories(), (int)calculator.getLunchFats(),
+                    (int)calculator.getLunchCarbs(), (int)calculator.getLunchFiber(),
+                    (int)calculator.getLunchProteins()};
+
+        else					//if type dinner
+            return new int[] {(int)calculator.getDinnerCalories(), (int)calculator.getDinnerFats(),
+                    (int)calculator.getDinnerCarbs(), (int)calculator.getDinnerFiber(),
+                    (int)calculator.getDinnerProteins()};
+
+    }
 
     /**
      * This method returns the list of random prices.

@@ -22,6 +22,7 @@ public class JacopWizard {
         String[] ingredients = meal.getIngredients();
         int[] price = meal.getPrices();
         int[] limits = meal.getMinimumRequiredIngredients(personalProfile);
+        int[] upperLimits = meal.getMaximumRequiredIngredients(personalProfile);
         int[][] matrix = meal.getIngredientsMatrix();
         logger.info(meal.getClass().getName());
         int m = food.length;
@@ -38,7 +39,7 @@ public class JacopWizard {
         IntVar cost = new IntVar(store, "cost", 0, 120);
 
         for(int i = 0; i < n; i++) {
-            IntVar minReq = new IntVar(store, "limit" + i, limits[i], limits[i] + 20);
+            IntVar minReq = new IntVar(store, "limit" + i, limits[i], upperLimits[i]);
 //            if (i != 1) {
 //                store.impose(new Knapsack(matrix[i], price, x, cost, minReq));
             //    }
