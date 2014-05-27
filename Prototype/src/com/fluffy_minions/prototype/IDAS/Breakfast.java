@@ -14,7 +14,20 @@ import com.fluffy_minions.prototype.food.DBRows;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 import com.fluffy_minions.prototype.needsCalculators.TotalNeedsCalculator;
 
+/**
+ * The class Breakfast contains the food that is chosen
+ * for breakfast and the minimum requirements for breakfast.
+ */
+
 public class Breakfast extends GenericMeal implements IMeal {
+
+    /**
+     * The fields are for logger, the names of every type of food,
+     * the ingredients, the minimum and the maximum requirements,
+     * the prices and the matrix with the amount of ingredients each type
+     * of food contains.
+     */
+
     private static final Logger LOGGER = Logger.getLogger(Breakfast.class.getName());
     private String[] names;
     private String[] ingredients;
@@ -22,6 +35,13 @@ public class Breakfast extends GenericMeal implements IMeal {
     private int[] maximumRequiredIngredients;
     private int[] prices;
     private int[][] ingredientsMatrix;
+
+    /**
+     * This constructor retrieves all the food from
+     * the appropriate tables and stores it in dbRows.
+     * @param sqLiteHelper
+     * @param personalProfile information about a person (age, weight, height, activity level)
+     */
 
     public Breakfast(SQLiteHelper sqLiteHelper, PersonalProfile personalProfile) {
 
@@ -107,19 +127,22 @@ public class Breakfast extends GenericMeal implements IMeal {
         prices = newPrices;
         ingredientsMatrix = newMatrix;
 
-  //      names = Arrays.copyOfRange(names, x, y);
-//        minimumRequiredIngredients = Arrays.copyOfRange(minimumRequiredIngredients, x, y);
-    //    prices = Arrays.copyOfRange(prices, x, y);
-
-      //  for(int i = 0; i < ingredients.length; ++i) {
-        //    ingredientsMatrix[i] = Arrays.copyOfRange(ingredientsMatrix[i], x, y);
-        //}
     }
+
+    /**
+     * This method returns the names of every type of food.
+     * @return food name
+     */
 
 	@Override
 	public String[] getNames() {
            return names;
 	}
+
+    /**
+     * This method returns the ingredients.
+     * @return ingredients
+     */
 
 	@Override
 	public String[] getIngredients() { 
