@@ -71,7 +71,7 @@ public class FillOutProfileFragment extends SherlockFragment {
                         datePicker = datePicker1;
                         birthdayButton.setText("Birthday: " + datePicker.getYear() + "-" + datePicker.getMonth() + "-" + datePicker.getDayOfMonth());
                     }
-                }, 2014, 5, 1);
+                }, 1990, 5, 1);
 
                 datePickerDialog.show();
             }
