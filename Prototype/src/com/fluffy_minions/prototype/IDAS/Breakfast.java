@@ -76,7 +76,7 @@ public class Breakfast extends GenericMeal implements IMeal {
         prices = dbRows.getPrices();
         ingredientsMatrix = dbRows.getIngredientsMatrix();
 
-        int size = 20;
+        int size = 40;
         String[] newNames = new String[size];
         int[] newPrices = new int[size];
         int[][] newMatrix = new int[ingredients.length][size];

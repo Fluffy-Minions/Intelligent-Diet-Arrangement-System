@@ -38,7 +38,7 @@ public class JacopWizard {
         IntVar cost = new IntVar(store, "cost", 0, 120);
 
         for(int i = 0; i < n; i++) {
-            IntVar minReq = new IntVar(store, "limit" + i, limits[i], IntDomain.MaxInt);
+            IntVar minReq = new IntVar(store, "limit" + i, limits[i], limits[i] + 20);
 //            if (i != 1) {
 //                store.impose(new Knapsack(matrix[i], price, x, cost, minReq));
             //    }
@@ -74,7 +74,7 @@ public class JacopWizard {
 
                 for(int k = 0; k < ingredients.length; ++k) {
                     a += ingredients[k] + " = " + matrix[k][i] +", ";
-                    total[k] += matrix[k][i];
+                    total[k] += x[i].value() * matrix[k][i];
                     // logger.info(limits[k] + " ");
                 }
 
