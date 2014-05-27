@@ -9,14 +9,31 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ * This class is used for the interaction between the JacoP library and
+ * the database with every type of food.
+ *
  * Created by sorin on 5/19/14.
  */
+
 public class DBRows {
+
+    /**
+     * the list of rows in the database
+     */
+
 	private List<DBRow> rows = new ArrayList<DBRow>();
+
+    /**
+     * This method adds another row in the list of rows.
+     */
 
 	public void add(DBRow row) {
 		rows.add(row);
 	}
+
+    /**
+     * This method returns the name of the food.
+     */
 
 	public String[] getNames() {
 		List<String> names = new ArrayList<String>();
@@ -26,10 +43,18 @@ public class DBRows {
 		return names.toArray(new String[rows.size()]);
 	}
 
+    /**
+     * This method returns the ingredients.
+     */
+
 	public String[] getIngredients() {
 		String[] ingredients = { "CALORIES" , "FATS" , "CARBS" , "FIBER", "PROTEINS" };
 		return ingredients;
 	}
+
+    /**
+     * This method returns the minimum daily requirement for every ingredient.
+      */
 
 	public int[] getMinimumRequiredIngredients(PersonalProfile profile, int type) {
 		TotalNeedsCalculator calculator = new TotalNeedsCalculator();
@@ -53,6 +78,9 @@ public class DBRows {
 
 	}
 
+    /**
+     * This method returns the list of random prices.
+     */
 	public int[] getPrices() {
 		Random random = new Random();
 
@@ -66,6 +94,12 @@ public class DBRows {
 
 		//return new int[] { random.nextInt(50) + 1,  random.nextInt(50) + 1, random.nextInt(50) + 1, random.nextInt(50) + random.nextInt(50) + 1 };
 	}
+
+
+    /**
+     * This method returns the number of ingredients (calories/fiber/etc.)
+     * that every food in the database contains.
+     */
 
 	public int[][] getIngredientsMatrix() {
 		int[][] ingredients = new int[getIngredients().length][rows.size()];
