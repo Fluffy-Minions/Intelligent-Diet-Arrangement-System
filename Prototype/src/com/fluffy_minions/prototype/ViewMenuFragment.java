@@ -97,6 +97,8 @@ public class ViewMenuFragment extends SherlockFragment {
 
                 for(int day = 0; day < 7; ++day) {
                     for(int meal = 0; meal < 3; ++meal) {
+                        meals[meal].regenerate();
+
                         String key = String.valueOf(day) + String.valueOf(meal);
                         String value = jacopWizard.invokeTheGods(meals[meal], personalProfile, LOGGER);
 

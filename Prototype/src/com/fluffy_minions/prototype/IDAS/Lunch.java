@@ -77,6 +77,39 @@ public class Lunch extends GenericMeal implements IMeal {
         prices = dbRows.getPrices();
         ingredientsMatrix = dbRows.getIngredientsMatrix();
 
+        regenerate();
+    }
+
+    @Override
+    public String[] getNames() {
+        return names;
+    }
+
+    @Override
+    public String[] getIngredients() {
+        return ingredients;
+    }
+
+    @Override
+    public int[] getMinimumRequiredIngredients(PersonalProfile profile) {
+        return minimumRequiredIngredients;
+    }
+
+    @Override
+    public int[] getMaximumRequiredIngredients(PersonalProfile profile) { return maximumRequiredIngredients; }
+
+    @Override
+    public int[] getPrices() {
+        return prices;
+    }
+
+    @Override
+    public int[][] getIngredientsMatrix() {
+        return ingredientsMatrix;
+    }
+
+    @Override
+    public void regenerate() {
         int size = 40;
         String[] newNames = new String[size];
         int[] newPrices = new int[size];
@@ -108,35 +141,7 @@ public class Lunch extends GenericMeal implements IMeal {
 
     }
 
-    @Override
-    public String[] getNames() {
-        return names;
-    }
-
-    @Override
-    public String[] getIngredients() {
-        return ingredients;
-    }
-
-    @Override
-    public int[] getMinimumRequiredIngredients(PersonalProfile profile) {
-        return minimumRequiredIngredients;
-    }
-
-    @Override
-    public int[] getMaximumRequiredIngredients(PersonalProfile profile) { return maximumRequiredIngredients; }
-
-    @Override
-    public int[] getPrices() {
-        return prices;
-    }
-
-    @Override
-    public int[][] getIngredientsMatrix() {
-        return ingredientsMatrix;
-    }
-
-	public String[] getTables(){
+    public String[] getTables(){
 		return new String[] { "CIORBE", "BAUTURI", "CEREALE", "DULCIURI", "FRUCTE", "GUILTY_PLEASURES", "LEGUME", "PREPARATE_CARNE", "PREPARATE_FARA_CARNE"};
 	}
 

@@ -98,35 +98,7 @@ public class Breakfast extends GenericMeal implements IMeal {
         prices = dbRows.getPrices();
         ingredientsMatrix = dbRows.getIngredientsMatrix();
 
-        int size = 40;
-        String[] newNames = new String[size];
-        int[] newPrices = new int[size];
-        int[][] newMatrix = new int[ingredients.length][size];
-
-        Random random = new Random();
-        List<Integer> randoms = new ArrayList<>();
-        int rnd = 0;
-        for(int i = 0; i < size; ++i) {
-            do {
-                rnd = random.nextInt(names.length);
-            } while(randoms.contains(rnd));
-
-            randoms.add(rnd);
-        }
-
-        for(int i = 0; i < size; ++i) {
-            newNames[i] = names[randoms.get(i)];
-            newPrices[i] = prices[randoms.get(i)];
-
-            for(int k = 0; k < ingredients.length; ++k) {
-                newMatrix[k][i] = ingredientsMatrix[k][randoms.get(i)];
-            }
-        }
-
-        names = newNames;
-        prices = newPrices;
-        ingredientsMatrix = newMatrix;
-
+        regenerate();
     }
 
     /**
@@ -166,8 +138,41 @@ public class Breakfast extends GenericMeal implements IMeal {
 	public int[][] getIngredientsMatrix() {
 		return ingredientsMatrix;
 	}
-	
-	public String[] getTables(){
+
+    @Override
+    public void regenerate() {
+        int size = 40;
+        String[] newNames = new String[size];
+        int[] newPrices = new int[size];
+        int[][] newMatrix = new int[ingredients.length][size];
+
+        Random random = new Random();
+        List<Integer> randoms = new ArrayList<>();
+        int rnd = 0;
+        for(int i = 0; i < size; ++i) {
+            do {
+                rnd = random.nextInt(names.length);
+            } while(randoms.contains(rnd));
+
+            randoms.add(rnd);
+        }
+
+        for(int i = 0; i < size; ++i) {
+            newNames[i] = names[randoms.get(i)];
+            newPrices[i] = prices[randoms.get(i)];
+
+            for(int k = 0; k < ingredients.length; ++k) {
+                newMatrix[k][i] = ingredientsMatrix[k][randoms.get(i)];
+            }
+        }
+
+        names = newNames;
+        prices = newPrices;
+        ingredientsMatrix = newMatrix;
+
+    }
+
+    public String[] getTables(){
 		return new String[] { "BAUTURI", "OUA", "CEREALE", "FRUCTE", "LACTATE", "LEGUME", "PREPARATE_CARNE", "PREPARATE_FARA_CARNE"
 		};
 	}

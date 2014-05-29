@@ -10,10 +10,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
@@ -22,6 +21,7 @@ import android.widget.TextView;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.*;
 import com.fluffy_minions.prototype.IDAS.Breakfast;
 import com.fluffy_minions.prototype.IDAS.IMeal;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
@@ -34,6 +34,7 @@ public class MainActivity extends SherlockFragmentActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
     private static final Logger LOGGER = Logger.getLogger(MainActivity.class.getName());
 
+    private SherlockFragment viewMenu;
     private PersonalProfile personalProfile;
 
     /**
@@ -67,16 +68,16 @@ public class MainActivity extends SherlockFragmentActivity
         }
 
 
-        mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        //mNavigationDrawerFragment = (NavigationDrawerFragment)
+         //       getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        //mTitle = getTitle();
 
-        // replaceFragmentWith(new FillOutProfileFragment(), "Fill out profile");
+       replaceFragmentWith(new ViewMenuFragment(), "Weekly menu");
 
         // Set up the drawer.
-        mNavigationDrawerFragment.setUp(
+       /* mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
+                (DrawerLayout) findViewById(R.id.drawer_layout));*/
 
         sqLiteHelper = new SQLiteHelper(this);
 
@@ -123,18 +124,17 @@ public class MainActivity extends SherlockFragmentActivity
         actionBar.setTitle(mTitle);
     }
 
-
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        if (!mNavigationDrawerFragment.isDrawerOpen()) {
+    @Override
+    public boolean onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu) {
+       // if (!mNavigationDrawerFragment.isDrawerOpen()) {
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
-            getMenuInflater().inflate(R.menu.main, menu);
-            restoreActionBar();
+            getSupportMenuInflater().inflate(R.menu.main, menu);
+            //restoreActionBar();
             return true;
-        }
-        return super.onCreateOptionsMenu(menu);
+        //}
+        //return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -144,10 +144,11 @@ public class MainActivity extends SherlockFragmentActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            return true;
+            // replaceFragmentWith(new Settings(), "Settings");
+            replaceFragmentWith(new FillOutProfileFragment(), "Profile");
         }
         return super.onOptionsItemSelected(item);
-    }*/
+    }
 
     public void replaceFragmentWith(SherlockFragment fragment, String title) {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -162,6 +163,15 @@ public class MainActivity extends SherlockFragmentActivity
         mTitle = title;
 
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        if(fragmentManager.getBackStackEntryCount() == 1) { return; }
+
+        super.onBackPressed();
     }
 
     public PersonalProfile getPersonalProfile() {

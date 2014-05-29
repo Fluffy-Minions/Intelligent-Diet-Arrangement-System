@@ -9,5 +9,5 @@ public interface IMeal {
     public int[] getMaximumRequiredIngredients(PersonalProfile profile);
     public int[] getPrices();
     public int[][] getIngredientsMatrix();
-
+    public void regenerate();
 }
