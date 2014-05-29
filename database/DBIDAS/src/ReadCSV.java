@@ -31,7 +31,7 @@ import java.io.IOException;
 	    //create statement object
 	    st = c.createStatement();
 	    
-  	String csvFile = "/Users/Kinga/My Documents/GitHub/Intelligent-Diet-Arrangement-System/DB_ready_data/Preparate_fara_carne.csv";
+  	String csvFile = "/Users/Kinga/My Documents/GitHub/Intelligent-Diet-Arrangement-System/DB_ready_data_short/Bauturi.csv";
   	BufferedReader br = null;
   	String line = "";
   	String cvsSplitBy = ",";
@@ -44,11 +44,11 @@ import java.io.IOException;
   		        // use comma as separator
   			String[] food = line.split(cvsSplitBy);
   			
-  			String sqlIns = "INSERT INTO PREPARATE_FARA_CARNE " +
+  			String sqlIns = "INSERT INTO BAUTURI " +
 		    		"(ID,NAME, BREAKFAST, LUNCH, DINNER, NEEDS_SIDEDISH, IS_SIDEDISH, " +
-		    		" CALORIES, PROTEINS, FATS, CARBS, FIBER) VALUES ("+ID+",\'" + food[0]+"\'," + food[1]+","+
+		    		" CALORIES, PROTEINS, FATS, CARBS,FIBER) VALUES ("+ID+",\'" + food[0]+"\'," + food[1]+","+
 		    		food[2]+"," + food[3]+"," + food[4]+"," + food[5]+"," + food[6]+"," + food[7]+"," +
-		    		food[8]+"," + food[9]+"," + food[10]+")";
+		    		food[8]+"," + food[9] + "," + food[10]+ ")";
   			st.execute(sqlIns);
   			ID++;
   		}

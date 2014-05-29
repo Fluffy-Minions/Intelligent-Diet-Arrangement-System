@@ -20,16 +20,17 @@ public class DB {
 		    
 		    //create statement object
 		    st = c.createStatement();
-		    String sqlSt = "CREATE TABLE DULCURI " +
+		    String sqlSt = "CREATE TABLE CEREALE " +
 		    		" (ID INT PRIMARY KEY NOT NULL," +
 		    		" NAME STRING, BREAKFAST INT, LUNCH INT, DINNER INT, NEEDS_SIDEDISH INT, IS_SIDEDISH INT, " +
 		    		" CALORIES INT, PROTEINS INT, FATS INT, CARBS INT, FIBER INT, VITAMINS INT, MINERALS INT)";
 		  
 		    String query = "SELECT * FROM BAUTURI";
 		    
-		    String sqlDrop = "DROP TABLE DULCURI";
+		    String sqlDrop = "DROP TABLE CEREALE";
 		    //execute sql statement
 		    st.execute(sqlDrop);
+		    st.execute(sqlSt);
 		    
 		    //execute query and put it in result set
 		 //   ResultSet rs = st.executeQuery(query);
