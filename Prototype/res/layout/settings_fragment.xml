@@ -5,6 +5,26 @@
                   android:layout_height="match_parent">
 
     <MultiSelectListPreference
+        android:title="Gender"
+        android:dialogTitle="Gender"
+        android:key="gender"/>
+
+    <MultiSelectListPreference
+        android:title="Activity level"
+        android:dialogTitle="Activity level"
+        android:key="activity"/>
+
+    <MultiSelectListPreference
+        android:title="Height"
+        android:dialogTitle="Height"
+        android:key="height"/>
+
+    <MultiSelectListPreference
+        android:title="Weight"
+        android:dialogTitle="Weight"
+        android:key="weight"/>
+
+    <MultiSelectListPreference
         android:title="Age"
         android:dialogTitle="Age"
         android:key="age"/>

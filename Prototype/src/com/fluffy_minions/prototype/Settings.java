@@ -6,11 +6,12 @@ import android.preference.PreferenceFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.actionbarsherlock.app.SherlockPreferenceActivity;
 
 /**
  * Created by sorin on 5/29/14.
  */
-public class Settings extends PreferenceFragment {
+public class Settings extends SherlockPreferenceActivity {
     public Settings() { }
 
     @Override

@@ -2,6 +2,7 @@ package com.fluffy_minions.prototype;
 
 import android.app.ActionBar;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -144,8 +145,10 @@ public class MainActivity extends SherlockFragmentActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            // replaceFragmentWith(new Settings(), "Settings");
-            replaceFragmentWith(new FillOutProfileFragment(), "Profile");
+            //replaceFragmentWith(new Settings(), "Settings");
+            Intent intent = new Intent(this, Settings.class);
+            startActivity(intent);
+           // replaceFragmentWith(new FillOutProfileFragment(), "Profile");
         }
         return super.onOptionsItemSelected(item);
     }
