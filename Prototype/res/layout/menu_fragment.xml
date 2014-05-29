@@ -38,32 +38,8 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:textAppearance="?android:attr/textAppearanceMedium"
-						android:text="Belvita biscuits with extra vitamins - 128 Kcal"
 						android:id="@+id/breakfast_textView"
-						android:layout_gravity="center_horizontal"
-						android:layout_marginTop="6dp"
-						android:layout_marginBottom="6dp" />
-
-					<!--<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textAppearance="?android:attr/textAppearanceMedium"
-						android:text="256 ml of milk with 0.1 % fat - 256 Kcal"
-						android:id="@+id/textView2"
-						android:layout_gravity="center_horizontal"
-						android:layout_marginTop="6dp"
-						android:layout_marginBottom="6dp" />
-
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textAppearance="?android:attr/textAppearanceMedium"
-						android:text="Are you Pippin? Tap here for second breakfast!"
-						android:id="@+id/textView3"
-						android:layout_gravity="center_horizontal"
-						android:textColor="@android:color/holo_blue_light"
-						android:layout_marginTop="6dp"
-						android:layout_marginBottom="6dp" />-->
+						android:layout_gravity="center_horizontal" />
 				</LinearLayout>
 
 				<LinearLayout
@@ -77,29 +53,7 @@
 						android:layout_height="wrap_content"
                         android:id="@+id/lunch_textView"
 						android:textAppearance="?android:attr/textAppearanceMedium"
-						android:layout_gravity="center_horizontal"
-						android:layout_marginTop="6dp"
-						android:layout_marginBottom="6dp" />
-
-					<!--<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textAppearance="?android:attr/textAppearanceMedium"
-						android:text="Pateu cu dulceață și murături (512 Kcal)"
-						android:id="@+id/textView28"
-						android:layout_gravity="center_horizontal"
-						android:layout_marginTop="6dp"
-						android:layout_marginBottom="6dp" />
-
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textAppearance="?android:attr/textAppearanceMedium"
-						android:text="Cartofi prăjiți cu Diet Coke (256 Kcal)"
-						android:id="@+id/textView37"
-						android:layout_gravity="center_horizontal"
-						android:layout_marginTop="6dp"
-						android:layout_marginBottom="6dp" />-->
+						android:layout_gravity="center_horizontal"/>
 					</LinearLayout>
 
 
@@ -115,29 +69,9 @@
 					android:layout_height="wrap_content"
 					android:textAppearance="?android:attr/textAppearanceMedium"
                     android:id="@+id/dinner_textView"
-					android:layout_gravity="center_horizontal"
-					android:layout_marginTop="6dp"
-					android:layout_marginBottom="6dp" />
+					android:layout_gravity="center_horizontal"/>
 
-					<!--<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textAppearance="?android:attr/textAppearanceMedium"
-						android:text="Pâine cu muștar și clătite vieneze (128 Kcal)"
-						android:id="@+id/textView22"
-						android:layout_gravity="center_horizontal"
-						android:layout_marginTop="6dp"
-						android:layout_marginBottom="6dp" />
-
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textAppearance="?android:attr/textAppearanceMedium"
-						android:text="Ceai negru cu pătrunjel și sos iute (64 Kcal)"
-						android:id="@+id/textView33"
-						android:layout_gravity="center_horizontal"
-						android:layout_marginTop="6dp"
-						android:layout_marginBottom="6dp" />--></LinearLayout>
+					</LinearLayout>
 			</FrameLayout>
 		</LinearLayout>
 	</TabHost>

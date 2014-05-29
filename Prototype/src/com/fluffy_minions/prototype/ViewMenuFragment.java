@@ -41,7 +41,7 @@ public class ViewMenuFragment extends SherlockFragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
 
-                if(mMainActivity.getPersonalProfile() == null) {
+                if(mMainActivity.getPersonalProfile() == null || !mMainActivity.getPersonalProfile().isComplete()) {
                     Toast.makeText(mMainActivity, "Please fill out your profile", Toast.LENGTH_LONG).show();
                     return;
                 }

@@ -10,19 +10,16 @@
     <string name="action_settings">Settings</string>
 
 	<array name="genders">
-		<item>Select gender</item>
 		<item>Female</item>
 		<item>Male</item>
 	</array>
 
 	<array name="activity_levels">
-		<item>Select activity level</item>
 		<item>Sedentary</item>
 		<item>Lightly active</item>
 		<item>Moderately active</item>
 		<item>Very active</item>
 		<item>Extremely active</item>
-		<item>Minion diet (you feast with Minions)</item>
 	</array>
 	
 	<array name="days_of_week">

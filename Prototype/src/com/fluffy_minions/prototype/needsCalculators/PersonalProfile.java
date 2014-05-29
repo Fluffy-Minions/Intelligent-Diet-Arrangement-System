@@ -46,4 +46,8 @@ public class PersonalProfile {
 	public void setActivityLevel(String activityLevel) {
 		this.activityLevel = activityLevel;
 	}
+
+    public boolean isComplete() {
+        return (weight != 0 && height != 0 && age != 0 && gender != null && activityLevel != null);
+    }
 }

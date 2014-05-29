@@ -4,28 +4,35 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent">
 
-    <MultiSelectListPreference
+    <ListPreference
         android:title="Gender"
         android:dialogTitle="Gender"
+        android:entries="@array/genders"
+        android:entryValues="@array/genders"
         android:key="gender"/>
 
-    <MultiSelectListPreference
+    <ListPreference
         android:title="Activity level"
         android:dialogTitle="Activity level"
+        android:entries="@array/activity_levels"
+        android:entryValues="@array/activity_levels"
         android:key="activity"/>
 
-    <MultiSelectListPreference
+    <EditTextPreference
         android:title="Height"
         android:dialogTitle="Height"
+        android:numeric="integer"
         android:key="height"/>
 
-    <MultiSelectListPreference
+    <EditTextPreference
         android:title="Weight"
         android:dialogTitle="Weight"
+        android:numeric="integer"
         android:key="weight"/>
 
-    <MultiSelectListPreference
+    <EditTextPreference
         android:title="Age"
         android:dialogTitle="Age"
+        android:numeric="integer"
         android:key="age"/>
 </PreferenceScreen>

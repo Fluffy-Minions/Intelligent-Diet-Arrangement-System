@@ -9,6 +9,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.AttributeSet;
@@ -139,6 +140,29 @@ public class MainActivity extends SherlockFragmentActivity
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 1969) {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+            personalProfile = new PersonalProfile();
+
+            String gender = preferences.getString("gender", null);
+            String activity = preferences.getString("activity", null);
+            String height = preferences.getString("height", null);
+            String weight = preferences.getString("weight", null);
+            String age = preferences.getString("age", null);
+
+            if(gender != null) { personalProfile.setGender(gender); }
+            if(activity != null) { personalProfile.setActivityLevel(activity); }
+            if(height != null) { personalProfile.setHeight(Double.parseDouble(height)); }
+            if(weight != null) { personalProfile.setWeight(Double.parseDouble(weight)); }
+            if(age != null) { personalProfile.setAge(Double.parseDouble(age)); }
+        }
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -147,7 +171,7 @@ public class MainActivity extends SherlockFragmentActivity
         if (id == R.id.action_settings) {
             //replaceFragmentWith(new Settings(), "Settings");
             Intent intent = new Intent(this, Settings.class);
-            startActivity(intent);
+            startActivityForResult(intent, 1969);
            // replaceFragmentWith(new FillOutProfileFragment(), "Profile");
         }
         return super.onOptionsItemSelected(item);
