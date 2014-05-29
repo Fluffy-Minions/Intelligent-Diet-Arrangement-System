@@ -48,7 +48,7 @@ public class Breakfast extends GenericMeal implements IMeal {
         SQLiteDatabase db = sqLiteHelper.getReadableDatabase();
 
         for(String table : this.getTables()) {
-            Cursor c = db.rawQuery("SELECT * FROM " + table, null);
+            Cursor c = db.rawQuery("SELECT * FROM " + table + " WHERE BREAKFAST = 1", null);
 
             int[] indexes = new int[] {
                 c.getColumnIndex("_id"),
