@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.AdapterView;
@@ -82,31 +83,53 @@ public class ViewMenuFragment extends SherlockFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.regenerate_menu: {
-                IMeal[] meals = {
-                    new Breakfast(mMainActivity.getSqLiteHelper(), mMainActivity.getPersonalProfile()),
-                    new Lunch(mMainActivity.getSqLiteHelper(), mMainActivity.getPersonalProfile()),
-                    new Dinner(mMainActivity.getSqLiteHelper(), mMainActivity.getPersonalProfile())
-                };
+                new AsyncTask<Void, Void, Void>() {
+                    @Override
+                    protected void onPreExecute() {
+                        super.onPreExecute();
 
-                PersonalProfile personalProfile = mMainActivity.getPersonalProfile();
-
-                JacopWizard jacopWizard = new JacopWizard();
-
-                SharedPreferences sharedPreferences = mMainActivity.getSharedPreferences("menu", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                for(int day = 0; day < 7; ++day) {
-                    for(int meal = 0; meal < 3; ++meal) {
-                        meals[meal].regenerate();
-
-                        String key = String.valueOf(day) + String.valueOf(meal);
-                        String value = jacopWizard.invokeTheGods(meals[meal], personalProfile, LOGGER);
-
-                        editor.putString(key, value);
+                        Toast.makeText(mMainActivity, "Generating menu...", Toast.LENGTH_LONG).show();
                     }
-                }
 
-                editor.commit();
+                    @Override
+                    protected Void doInBackground(Void... voids) {
+                        IMeal[] meals = {
+                                new Breakfast(mMainActivity.getSqLiteHelper(), mMainActivity.getPersonalProfile()),
+                                new Lunch(mMainActivity.getSqLiteHelper(), mMainActivity.getPersonalProfile()),
+                                new Dinner(mMainActivity.getSqLiteHelper(), mMainActivity.getPersonalProfile())
+                        };
+
+                        PersonalProfile personalProfile = mMainActivity.getPersonalProfile();
+
+                        JacopWizard jacopWizard = new JacopWizard();
+
+                        SharedPreferences sharedPreferences = mMainActivity.getSharedPreferences("menu", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                        for (int day = 0; day < 7; ++day) {
+                            for (int meal = 0; meal < 3; ++meal) {
+                                meals[meal].regenerate();
+
+                                String key = String.valueOf(day) + String.valueOf(meal);
+                                String value = jacopWizard.invokeTheGods(meals[meal], personalProfile, LOGGER);
+
+                                editor.putString(key, value);
+                            }
+                        }
+
+                        editor.commit();
+
+                        return null;
+                    }
+
+                    @Override
+                    protected void onPostExecute(Void aVoid) {
+                        super.onPostExecute(aVoid);
+
+                        Toast.makeText(mMainActivity, "Menu generated!", Toast.LENGTH_LONG).show();
+                    }
+                }.execute();
+
             }
             default: { return super.onOptionsItemSelected(item); }
         }
