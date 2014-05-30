@@ -22,21 +22,6 @@ import com.fluffy_minions.prototype.needsCalculators.TotalNeedsCalculator;
 public class Breakfast extends GenericMeal implements IMeal {
 
     /**
-     * The fields are for logger, the names of every type of food,
-     * the ingredients, the minimum and the maximum requirements,
-     * the prices and the matrix with the amount of ingredients each type
-     * of food contains.
-     */
-
-    private static final Logger LOGGER = Logger.getLogger(Breakfast.class.getName());
-    private String[] names;
-    private String[] ingredients;
-    private int[] minimumRequiredIngredients;
-    private int[] maximumRequiredIngredients;
-    private int[] prices;
-    private int[][] ingredientsMatrix;
-
-    /**
      * This constructor retrieves all the food from
      * the appropriate tables and stores it in dbRows.
      * @param sqLiteHelper
@@ -101,76 +86,7 @@ public class Breakfast extends GenericMeal implements IMeal {
         regenerate();
     }
 
-    /**
-     * This method returns the names of every type of food.
-     * @return food name
-     */
-
-	@Override
-	public String[] getNames() {
-           return names;
-	}
-
-    /**
-     * This method returns the ingredients.
-     * @return ingredients
-     */
-
-	@Override
-	public String[] getIngredients() { 
-		return ingredients;
-	}
-
-	@Override
-	public int[] getMinimumRequiredIngredients(PersonalProfile profile) {
-		return minimumRequiredIngredients;
-	}
-
     @Override
-    public int[] getMaximumRequiredIngredients(PersonalProfile profile) { return maximumRequiredIngredients; }
-
-	@Override
-	public int[] getPrices() {
-        return prices;
-	}
-
-	@Override
-	public int[][] getIngredientsMatrix() {
-		return ingredientsMatrix;
-	}
-
-    @Override
-    public void regenerate() {
-        int size = 40;
-        String[] newNames = new String[size];
-        int[] newPrices = new int[size];
-        int[][] newMatrix = new int[ingredients.length][size];
-
-        Random random = new Random();
-        List<Integer> randoms = new ArrayList<>();
-        int rnd = 0;
-        for(int i = 0; i < size; ++i) {
-            do {
-                rnd = random.nextInt(names.length);
-            } while(randoms.contains(rnd));
-
-            randoms.add(rnd);
-        }
-
-        for(int i = 0; i < size; ++i) {
-            newNames[i] = names[randoms.get(i)];
-            newPrices[i] = prices[randoms.get(i)];
-
-            for(int k = 0; k < ingredients.length; ++k) {
-                newMatrix[k][i] = ingredientsMatrix[k][randoms.get(i)];
-            }
-        }
-
-        names = newNames;
-        prices = newPrices;
-        ingredientsMatrix = newMatrix;
-
-    }
 
     public String[] getTables(){
 		return new String[] { "BAUTURI", "OUA", "CEREALE", "FRUCTE", "LACTATE", "LEGUME", "PREPARATE_CARNE", "PREPARATE_FARA_CARNE"

@@ -1,10 +1,8 @@
 package com.fluffy_minions.prototype;
 
-import com.fluffy_minions.prototype.IDAS.IMeal;
-import com.fluffy_minions.prototype.IDAS.Meal;
+import com.fluffy_minions.prototype.IDAS.GenericMeal;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 import org.jacop.constraints.SumWeight;
-import org.jacop.core.IntDomain;
 import org.jacop.core.IntVar;
 import org.jacop.core.Store;
 import org.jacop.search.*;
@@ -17,12 +15,12 @@ import java.util.logging.Logger;
  * Created by sorin on 5/22/14.
  */
 public class JacopWizard {
-    public String invokeTheGods(IMeal meal, PersonalProfile personalProfile, Logger logger) {
+    public String invokeTheGods(GenericMeal meal, PersonalProfile personalProfile, Logger logger) {
         String[] food = meal.getNames();
         String[] ingredients = meal.getIngredients();
         int[] price = meal.getPrices();
-        int[] limits = meal.getMinimumRequiredIngredients(personalProfile);
-        int[] upperLimits = meal.getMaximumRequiredIngredients(personalProfile);
+        int[] limits = meal.getMinimumRequiredIngredients();
+        int[] upperLimits = meal.getMaximumRequiredIngredients();
         int[][] matrix = meal.getIngredientsMatrix();
         logger.info(meal.getClass().getName());
         int m = food.length;

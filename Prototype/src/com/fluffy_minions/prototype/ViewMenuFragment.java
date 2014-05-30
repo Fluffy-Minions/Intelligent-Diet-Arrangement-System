@@ -1,7 +1,6 @@
 package com.fluffy_minions.prototype;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -11,13 +10,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.view.*;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
-import com.fluffy_minions.prototype.IDAS.Breakfast;
-import com.fluffy_minions.prototype.IDAS.Dinner;
-import com.fluffy_minions.prototype.IDAS.IMeal;
-import com.fluffy_minions.prototype.IDAS.Lunch;
+import com.fluffy_minions.prototype.IDAS.*;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 
 import java.util.logging.Logger;
@@ -93,7 +88,7 @@ public class ViewMenuFragment extends SherlockFragment {
 
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        IMeal[] meals = {
+                        GenericMeal[] meals = {
                                 new Breakfast(mMainActivity.getSqLiteHelper(), mMainActivity.getPersonalProfile()),
                                 new Lunch(mMainActivity.getSqLiteHelper(), mMainActivity.getPersonalProfile()),
                                 new Dinner(mMainActivity.getSqLiteHelper(), mMainActivity.getPersonalProfile())
