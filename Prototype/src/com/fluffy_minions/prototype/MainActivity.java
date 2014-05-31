@@ -25,7 +25,6 @@ import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.*;
 import com.fluffy_minions.prototype.IDAS.Breakfast;
-import com.fluffy_minions.prototype.IDAS.IMeal;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 
 import java.io.IOException;
