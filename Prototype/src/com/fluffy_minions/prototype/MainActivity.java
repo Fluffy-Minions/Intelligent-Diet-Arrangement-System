@@ -58,16 +58,7 @@ public class MainActivity extends SherlockFragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SharedPreferences pref = getSharedPreferences("profile", MODE_PRIVATE);
-        if(!pref.getString("gender", "").equals("")) {
-            personalProfile = new PersonalProfile();
-
-            personalProfile.setGender(pref.getString("gender", ""));
-            personalProfile.setActivityLevel(pref.getString("activity", ""));
-            personalProfile.setHeight(pref.getInt("height", 0));
-            personalProfile.setWeight(pref.getInt("weight", 0));
-            personalProfile.setAge(pref.getInt("age", 0));
-        }
+        loadPersonalProfile();
 
 
         //mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -144,22 +135,26 @@ public class MainActivity extends SherlockFragmentActivity
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == 1969) {
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-            personalProfile = new PersonalProfile();
-
-            String gender = preferences.getString("gender", null);
-            String activity = preferences.getString("activity", null);
-            String height = preferences.getString("height", null);
-            String weight = preferences.getString("weight", null);
-            String age = preferences.getString("age", null);
-
-            if(gender != null) { personalProfile.setGender(gender); }
-            if(activity != null) { personalProfile.setActivityLevel(activity); }
-            if(height != null) { personalProfile.setHeight(Double.parseDouble(height)); }
-            if(weight != null) { personalProfile.setWeight(Double.parseDouble(weight)); }
-            if(age != null) { personalProfile.setAge(Double.parseDouble(age)); }
+            loadPersonalProfile();
         }
+    }
+
+    public void loadPersonalProfile() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        personalProfile = new PersonalProfile();
+
+        String gender = preferences.getString("gender", null);
+        String activity = preferences.getString("activity", null);
+        String height = preferences.getString("height", null);
+        String weight = preferences.getString("weight", null);
+        String age = preferences.getString("age", null);
+
+        if(gender != null) { personalProfile.setGender(gender); }
+        if(activity != null) { personalProfile.setActivityLevel(activity); }
+        if(height != null) { personalProfile.setHeight(Double.parseDouble(height)); }
+        if(weight != null) { personalProfile.setWeight(Double.parseDouble(weight)); }
+        if(age != null) { personalProfile.setAge(Double.parseDouble(age)); }
     }
 
     @Override
