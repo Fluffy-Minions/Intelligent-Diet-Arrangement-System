@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.view.MenuInflater;
@@ -23,6 +24,8 @@ import java.util.logging.Logger;
 public class ViewMenuFragment extends SherlockFragment {
     private static final Logger LOGGER = Logger.getLogger(ViewMenuFragment.class.getName());
     private MainActivity mMainActivity;
+    private ProgressBar progressBar;
+    private boolean generating;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,6 +34,10 @@ public class ViewMenuFragment extends SherlockFragment {
         setHasOptionsMenu(true);
 
         ListView listView = (ListView) view.findViewById(R.id.day_of_week_list_view);
+        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+
+        progressBar.setMax(6);
+        progressBar.setVisibility(View.GONE);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -44,6 +51,11 @@ public class ViewMenuFragment extends SherlockFragment {
 
                 if(mMainActivity.getSharedPreferences("menu", Context.MODE_PRIVATE).getString("00", "").equals("")) {
                     Toast.makeText(mMainActivity, "Please generate a menu", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                if(generating) {
+                    Toast.makeText(mMainActivity, "Please wait while a menu is generated", Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -78,12 +90,19 @@ public class ViewMenuFragment extends SherlockFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.regenerate_menu: {
-                new AsyncTask<Void, Void, Void>() {
+                if(generating) {
+                    Toast.makeText(mMainActivity, "Please wait while a menu is generated", Toast.LENGTH_LONG).show();
+                    break;
+                }
+
+                new AsyncTask<Void, Integer, Void>() {
                     @Override
                     protected void onPreExecute() {
                         super.onPreExecute();
 
-                        Toast.makeText(mMainActivity, "Generating menu...", Toast.LENGTH_LONG).show();
+                        generating = true;
+                        progressBar.setVisibility(View.VISIBLE);
+                        // Toast.makeText(mMainActivity, "Generating menu...", Toast.LENGTH_LONG).show();
                     }
 
                     @Override
@@ -110,6 +129,8 @@ public class ViewMenuFragment extends SherlockFragment {
 
                                 editor.putString(key, value);
                             }
+
+                            publishProgress(day);
                         }
 
                         editor.commit();
@@ -118,16 +139,28 @@ public class ViewMenuFragment extends SherlockFragment {
                     }
 
                     @Override
+                    protected void onProgressUpdate(Integer... values) {
+                        super.onProgressUpdate(values);
+
+                        progressBar.incrementProgressBy(1);
+                    }
+
+                    @Override
                     protected void onPostExecute(Void aVoid) {
                         super.onPostExecute(aVoid);
 
+                        generating = false;
+                        progressBar.setVisibility(View.GONE);
+                        progressBar.setProgress(0);
                         Toast.makeText(mMainActivity, "Menu generated!", Toast.LENGTH_LONG).show();
                     }
                 }.execute();
 
+                return true;
             }
-            default: { return super.onOptionsItemSelected(item); }
         }
+
+        return super.onOptionsItemSelected(item);
     }
 
     /*@Override
