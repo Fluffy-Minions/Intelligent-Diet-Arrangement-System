@@ -69,7 +69,7 @@ public class JacopWizard {
             if(x[i].value() != 0) {
                 String a = food[i] + ": ";
 
-                s += x[i].value() + " x " + food[i] + "\n";
+                s += food[i] + " - " + x[i].value() * 100 + "g\n";
 
                 for(int k = 0; k < ingredients.length; ++k) {
                     a += ingredients[k] + " = " + matrix[k][i] +", ";
