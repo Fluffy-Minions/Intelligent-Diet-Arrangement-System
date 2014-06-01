@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fluffy_minions.prototype.MainActivity">
+    tools:context="com.fluffy_minions.prototype.mainControl.MainActivity">
 
     <!-- As the main content view, the view below consumes the entire
          space available using match_parent in both dimensions. -->
@@ -25,12 +25,12 @@
         android:layout_width="@dimen/navigation_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:name="com.fluffy_minions.prototype.NavigationDrawerFragment" />-->
+        android:name="com.fluffy_minions.prototype.mainControl.NavigationDrawerFragment" />-->
 
     <!--<fragment
         android:id="@+id/main_activity_fragment"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:name="com.fluffy_minions.prototype.ViewMenuFragment"/>-->
+        android:name="com.fluffy_minions.prototype.mainControl.ViewMenuFragment"/>-->
 
 </android.support.v4.widget.DrawerLayout>

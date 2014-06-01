@@ -2,7 +2,7 @@ package com.fluffy_minions.prototype.IDAS;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import com.fluffy_minions.prototype.SQLiteHelper;
+import com.fluffy_minions.prototype.mainControl.SQLiteHelper;
 import com.fluffy_minions.prototype.food.*;
 import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 
