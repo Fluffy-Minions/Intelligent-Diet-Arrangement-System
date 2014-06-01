@@ -6,9 +6,6 @@
         <option name="UPDATE_PROPERTY_FILES" value="true" />
       </configuration>
     </facet>
-    <facet type="android" name="Android2">
-      <configuration />
-    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -17,10 +14,10 @@
       <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" generated="true" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="library" name="jacop-4.0.0" level="project" />
-    <orderEntry type="module" module-name="actionbarsherlock" />
-    <orderEntry type="library" name="android-support-v4" level="project" />
+    <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
+    <orderEntry type="library" exported="" name="jacop-4.0.0" level="project" />
+    <orderEntry type="module" module-name="actionbarsherlock" exported="" />
+    <orderEntry type="library" exported="" name="android-support-v4" level="project" />
   </component>
 </module>
 
