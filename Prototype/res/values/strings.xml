@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Prototype</string>
+    <string name="app_name">Food-o-licious</string>
     <string name="title_section1">View menu</string>
     <string name="title_section2">Edit profile</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
