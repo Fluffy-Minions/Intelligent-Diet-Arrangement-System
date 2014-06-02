@@ -29,21 +29,12 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 
-public class MainActivity extends SherlockFragmentActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class MainActivity extends SherlockFragmentActivity {
     private static final Logger LOGGER = Logger.getLogger(MainActivity.class.getName());
 
     private SherlockFragment viewMenu;
     private PersonalProfile personalProfile;
 
-    /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
-    private NavigationDrawerFragment mNavigationDrawerFragment;
-
-    /**
-     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
-     */
     private CharSequence mTitle;
 
     private SQLiteHelper sqLiteHelper;
@@ -90,21 +81,6 @@ public class MainActivity extends SherlockFragmentActivity
             throw sqle;
 
         }
-    }
-
-    @Override
-    public void onNavigationDrawerItemSelected(int position) {
-        switch(position) {
-            case 0: {
-                replaceFragmentWith(new ViewMenuFragment(), "Menu");
-                break;
-            }
-            case 1: {
-                replaceFragmentWith(new FillOutProfileFragment(), "Fill out profile");
-                break;
-            }
-        }
-
     }
 
     public void restoreActionBar() {
