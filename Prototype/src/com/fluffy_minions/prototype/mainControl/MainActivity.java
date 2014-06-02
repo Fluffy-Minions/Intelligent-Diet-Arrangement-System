@@ -28,7 +28,6 @@ import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-
 public class MainActivity extends SherlockFragmentActivity {
     private static final Logger LOGGER = Logger.getLogger(MainActivity.class.getName());
     private PersonalProfile personalProfile;

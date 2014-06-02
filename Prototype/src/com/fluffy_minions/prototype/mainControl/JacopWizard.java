@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 /**
- * Created by sorin on 5/22/14.
+ * Computes the menu for a meal.
  */
 public class JacopWizard {
     /**
