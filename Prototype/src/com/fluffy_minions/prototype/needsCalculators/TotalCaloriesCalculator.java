@@ -12,7 +12,6 @@ public class TotalCaloriesCalculator {
      * the minimum necessary calories and the maximum number of calories
      * in a day.
      */
-
 	private double bmr;
 	private double bmi;
 	private double finalTDEE;
