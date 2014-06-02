@@ -31,15 +31,8 @@ import java.util.logging.Logger;
 
 public class MainActivity extends SherlockFragmentActivity {
     private static final Logger LOGGER = Logger.getLogger(MainActivity.class.getName());
-
-    private SherlockFragment viewMenu;
     private PersonalProfile personalProfile;
-
-    private CharSequence mTitle;
-
     private SQLiteHelper sqLiteHelper;
-
-    public SQLiteHelper getSqLiteHelper() { return sqLiteHelper; }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,59 +41,26 @@ public class MainActivity extends SherlockFragmentActivity {
 
         loadPersonalProfile();
 
-
-        //mNavigationDrawerFragment = (NavigationDrawerFragment)
-         //       getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        //mTitle = getTitle();
-
-       replaceFragmentWith(new ViewMenuFragment(), "Weekly menu");
-
-        // Set up the drawer.
-       /* mNavigationDrawerFragment.setUp(
-                R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));*/
+        replaceFragmentWith(new ViewMenuFragment(), "Weekly menu");
 
         sqLiteHelper = new SQLiteHelper(this);
 
         try {
-
             sqLiteHelper.createDataBase();
-
         } catch (IOException ioe) {
-
             throw new Error("Unable to create database");
-
         }
-
         try {
-
             sqLiteHelper.openDataBase();
-
-        }catch(SQLException sqle) {
-
+        } catch(SQLException sqle) {
             throw sqle;
-
         }
-    }
-
-    public void restoreActionBar() {
-        ActionBar actionBar = getActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
     }
 
     @Override
     public boolean onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu) {
-       // if (!mNavigationDrawerFragment.isDrawerOpen()) {
-            // Only show items in the action bar relevant to this screen
-            // if the drawer is not showing. Otherwise, let the drawer
-            // decide what to show in the action bar.
-            getSupportMenuInflater().inflate(R.menu.main, menu);
-            //restoreActionBar();
-            return true;
-        //}
-        //return super.onCreateOptionsMenu(menu);
+        getSupportMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
     @Override
@@ -112,6 +72,9 @@ public class MainActivity extends SherlockFragmentActivity {
         }
     }
 
+    /**
+     * Loads the personal profile from the SharedPreferences
+     */
     public void loadPersonalProfile() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -132,30 +95,28 @@ public class MainActivity extends SherlockFragmentActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            //replaceFragmentWith(new Settings(), "Settings");
+        if (item.getItemId() == R.id.action_settings) {
             Intent intent = new Intent(this, Settings.class);
             startActivityForResult(intent, 1969);
-           // replaceFragmentWith(new FillOutProfileFragment(), "Profile");
+            return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Replaces the current fragment with the given one.
+     *
+     * @param fragment the new fragment
+     * @param title the title to show in the action bar
+     */
     public void replaceFragmentWith(SherlockFragment fragment, String title) {
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
 
-        //		if(!(fragment instanceof NewPurchaseFragment) && !(fragment instanceof WalletsFragment)) {
         fragmentTransaction.addToBackStack(title);
-        //		}
-
-        mTitle = title;
 
         fragmentTransaction.commit();
     }
@@ -173,7 +134,5 @@ public class MainActivity extends SherlockFragmentActivity {
         return personalProfile;
     }
 
-    public void setPersonalProfile(PersonalProfile personalProfile) {
-        this.personalProfile = personalProfile;
-    }
+    public SQLiteHelper getSqLiteHelper() { return sqLiteHelper; }
 }

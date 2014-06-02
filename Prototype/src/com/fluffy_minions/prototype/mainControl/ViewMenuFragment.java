@@ -116,8 +116,6 @@ public class ViewMenuFragment extends SherlockFragment {
                                 new Dinner(mMainActivity.getSqLiteHelper(), mMainActivity.getPersonalProfile())
                         };
 
-                        PersonalProfile personalProfile = mMainActivity.getPersonalProfile();
-
                         JacopWizard jacopWizard = new JacopWizard();
 
                         SharedPreferences sharedPreferences = mMainActivity.getSharedPreferences("menu", Context.MODE_PRIVATE);
@@ -130,7 +128,7 @@ public class ViewMenuFragment extends SherlockFragment {
 
                                 while(result.equals("") && !isCancelled()) {
                                     meals[meal].regenerate();
-                                    result = jacopWizard.invokeTheGods(meals[meal], personalProfile, LOGGER);
+                                    result = jacopWizard.invokeTheGods(meals[meal], LOGGER);
                                 }
 
                                 editor.putString(key, result);

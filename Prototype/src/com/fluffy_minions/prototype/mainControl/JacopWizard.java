@@ -15,10 +15,16 @@ import java.util.logging.Logger;
  * Created by sorin on 5/22/14.
  */
 public class JacopWizard {
-    public String invokeTheGods(GenericMeal meal, PersonalProfile personalProfile, Logger logger) {
+    /**
+     * Computes the menu.
+     *
+     * @param meal the meal for which to compute the menu
+     * @param logger where to store the logs
+     * @return the meal
+     */
+    public String invokeTheGods(GenericMeal meal, Logger logger) {
         String[] food = meal.getNames();
         String[] ingredients = meal.getIngredients();
-        int[] price = meal.getPrices();
         int[] limits = meal.getMinimumRequiredIngredients();
         int[] upperLimits = meal.getMaximumRequiredIngredients();
         int[][] matrix = meal.getIngredientsMatrix();
@@ -33,18 +39,9 @@ public class JacopWizard {
             x[i] = new IntVar(store, "x_" + i, 0, 10);
         }
 
-        // Cost to minimize: x * price
-        IntVar cost = new IntVar(store, "cost", 0, 120);
-
         for(int i = 0; i < n; i++) {
             IntVar minReq = new IntVar(store, "limit" + i, limits[i], upperLimits[i]);
-//            if (i != 1) {
-//                store.impose(new Knapsack(matrix[i], price, x, cost, minReq));
-            //    }
-            //          else {
-            // this category has some items with zero profit, violates knapsack conditions so it is not used.
             store.impose(new SumWeight(x, matrix[i], minReq));
-            //      }
         }
 
         List<IntVar> vars = new ArrayList<IntVar>();
@@ -55,10 +52,6 @@ public class JacopWizard {
                 null, new IndomainMin<IntVar>());
 
         Search search = new DepthFirstSearch<IntVar>();
-
-        //search.getSolutionListener().searchAll(true);
-        //search.getSolutionListener().recordSolutions(true);
-        // search.setAssignSolution(true);
 
         search.setTimeOut(2);
         boolean result = search.labeling(store, select);
