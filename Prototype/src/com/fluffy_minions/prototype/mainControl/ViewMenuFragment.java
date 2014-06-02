@@ -125,12 +125,15 @@ public class ViewMenuFragment extends SherlockFragment {
 
                         for (int day = 0; day < 7 && !isCancelled(); ++day) {
                             for (int meal = 0; meal < 3 && !isCancelled(); ++meal) {
-                                meals[meal].regenerate();
-
+                                String result = "";
                                 String key = String.valueOf(day) + String.valueOf(meal);
-                                String value = jacopWizard.invokeTheGods(meals[meal], personalProfile, LOGGER);
 
-                                editor.putString(key, value);
+                                while(result.equals("")) {
+                                    meals[meal].regenerate();
+                                    result = jacopWizard.invokeTheGods(meals[meal], personalProfile, LOGGER);
+                                }
+
+                                editor.putString(key, result);
                             }
 
                             publishProgress();

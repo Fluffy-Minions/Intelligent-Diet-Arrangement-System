@@ -60,7 +60,10 @@ public class JacopWizard {
         //search.getSolutionListener().recordSolutions(true);
         // search.setAssignSolution(true);
 
+        search.setTimeOut(2);
         boolean result = search.labeling(store, select);
+
+        if(!result) { return ""; }
 
         String s = "";
         int[] total = new int[ingredients.length];
