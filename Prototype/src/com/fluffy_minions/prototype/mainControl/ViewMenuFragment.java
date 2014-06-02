@@ -27,6 +27,7 @@ public class ViewMenuFragment extends SherlockFragment {
     private MainActivity mMainActivity;
     private ProgressBar progressBar;
     private boolean generating;
+    private AsyncTask<Void, Void, Void> mAysncTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -88,21 +89,22 @@ public class ViewMenuFragment extends SherlockFragment {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(final MenuItem item) {
         switch(item.getItemId()) {
             case R.id.regenerate_menu: {
                 if(generating) {
-                    Toast.makeText(mMainActivity, "Please wait while a menu is generated", Toast.LENGTH_LONG).show();
+                    mAysncTask.cancel(true);
                     break;
                 }
 
-                new AsyncTask<Void, Integer, Void>() {
+                mAysncTask = new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected void onPreExecute() {
                         super.onPreExecute();
 
                         generating = true;
                         progressBar.setVisibility(View.VISIBLE);
+                        item.setIcon(R.drawable.ic_action_cancel);
                         // Toast.makeText(mMainActivity, "Generating menu...", Toast.LENGTH_LONG).show();
                     }
 
@@ -121,8 +123,8 @@ public class ViewMenuFragment extends SherlockFragment {
                         SharedPreferences sharedPreferences = mMainActivity.getSharedPreferences("menu", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                        for (int day = 0; day < 7; ++day) {
-                            for (int meal = 0; meal < 3; ++meal) {
+                        for (int day = 0; day < 7 && !isCancelled(); ++day) {
+                            for (int meal = 0; meal < 3 && !isCancelled(); ++meal) {
                                 meals[meal].regenerate();
 
                                 String key = String.valueOf(day) + String.valueOf(meal);
@@ -131,16 +133,16 @@ public class ViewMenuFragment extends SherlockFragment {
                                 editor.putString(key, value);
                             }
 
-                            publishProgress(day);
+                            publishProgress();
                         }
 
-                        editor.commit();
+                        if(!isCancelled()) { editor.commit(); }
 
                         return null;
                     }
 
                     @Override
-                    protected void onProgressUpdate(Integer... values) {
+                    protected void onProgressUpdate(Void... values) {
                         super.onProgressUpdate(values);
 
                         progressBar.incrementProgressBy(1);
@@ -153,7 +155,19 @@ public class ViewMenuFragment extends SherlockFragment {
                         generating = false;
                         progressBar.setVisibility(View.GONE);
                         progressBar.setProgress(0);
+                        item.setIcon(R.drawable.ic_action_refresh);
                         Toast.makeText(mMainActivity, "Menu generated!", Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    protected void onCancelled() {
+                        super.onCancelled();
+
+                        generating = false;
+                        progressBar.setVisibility(View.GONE);
+                        progressBar.setProgress(0);
+                        item.setIcon(R.drawable.ic_action_refresh);
+                        Toast.makeText(mMainActivity, "Menu generation canceled!", Toast.LENGTH_LONG).show();
                     }
                 }.execute();
 
