@@ -128,7 +128,7 @@ public class ViewMenuFragment extends SherlockFragment {
                                 String result = "";
                                 String key = String.valueOf(day) + String.valueOf(meal);
 
-                                while(result.equals("")) {
+                                while(result.equals("") && !isCancelled()) {
                                     meals[meal].regenerate();
                                     result = jacopWizard.invokeTheGods(meals[meal], personalProfile, LOGGER);
                                 }
