@@ -18,10 +18,9 @@ import java.util.List;
 import java.util.logging.Logger;
 
 /**
- * Created by sorin on 3/24/14.
+ * Displays the menu for each meal of the day in tabs.
  */
 public class Menu extends SherlockFragment {
-    private Logger LOGGER = Logger.getLogger(Menu.class.getName());
     private MainActivity mainActivity;
 
     @Override

@@ -28,6 +28,10 @@ import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 import java.io.IOException;
 import java.util.logging.Logger;
 
+/**
+ * The main UI of the application. Every 'screen' is a fragment
+ * and will be placed inside this activity.
+ */
 public class MainActivity extends SherlockFragmentActivity {
     private static final Logger LOGGER = Logger.getLogger(MainActivity.class.getName());
     private PersonalProfile personalProfile;

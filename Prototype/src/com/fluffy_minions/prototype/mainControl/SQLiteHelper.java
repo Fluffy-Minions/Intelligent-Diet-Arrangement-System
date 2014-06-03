@@ -13,7 +13,9 @@ import java.io.OutputStream;
 import java.util.logging.Logger;
 
 /**
- * Created by sorin on 5/19/14.
+ * A implementation of the SQLiteOpenHelper. Provides additional methods
+ * for importing the database for the assets folder.
+ *
  * Used code from http://www.reigndesign.com/blog/using-your-own-sqlite-database-in-android-applications/
  */
 public class SQLiteHelper extends SQLiteOpenHelper{

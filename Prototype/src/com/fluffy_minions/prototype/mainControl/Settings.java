@@ -10,7 +10,7 @@ import com.actionbarsherlock.app.SherlockPreferenceActivity;
 import com.fluffy_minions.prototype.R;
 
 /**
- * Created by sorin on 5/29/14.
+ * The settings dialog. Used for modifying the profile of the user.
  */
 public class Settings extends SherlockPreferenceActivity {
     public Settings() { }

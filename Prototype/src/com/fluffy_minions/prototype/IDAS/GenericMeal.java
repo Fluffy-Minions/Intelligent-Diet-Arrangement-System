@@ -7,6 +7,12 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
 
+/**
+ * This class provides the requirements of one meal (breakfast/lunch/dinner),
+ * the amount of ingredients that each food contains
+ * and the rows in the database.
+ */
+
 public abstract class GenericMeal {
 
     /**
@@ -46,19 +52,43 @@ public abstract class GenericMeal {
         return ingredients;
     }
 
+    /**
+     * This method provides the minimum number of calories/proteins/etc.
+     * for the current meal.
+     * @return min ingredients
+     */
+
     public int[] getMinimumRequiredIngredients() {
         return minimumRequiredIngredients;
     }
 
+    /**
+     * This method provides the maximum number of calories/proteins/etc.
+     * for the current meal.
+     * @return max ingredients
+     */
+
     public int[] getMaximumRequiredIngredients() { return maximumRequiredIngredients; }
+
 
     public int[] getPrices() {
         return prices;
     }
 
+    /**
+     * This method returns the number of calories/proteins/fiber/etc. for every type of food.
+     * @return matrix containing the ingredients for every food
+     */
+
     public int[][] getIngredientsMatrix() {
         return ingredientsMatrix;
     }
+
+    /**
+     * This method selects a number of random
+     * types of food from the database
+     * for a new menu.
+     */
 
     public void regenerate() {
         int size = 40;

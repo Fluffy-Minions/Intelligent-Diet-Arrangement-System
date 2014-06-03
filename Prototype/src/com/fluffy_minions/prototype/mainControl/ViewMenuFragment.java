@@ -20,7 +20,8 @@ import com.fluffy_minions.prototype.needsCalculators.PersonalProfile;
 import java.util.logging.Logger;
 
 /**
- * Created by sorin on 3/24/14.
+ * This fragment displays the days of the week and a refresh button
+ * for generating a new menu.
  */
 public class ViewMenuFragment extends SherlockFragment {
     private static final Logger LOGGER = Logger.getLogger(ViewMenuFragment.class.getName());
@@ -178,11 +179,4 @@ public class ViewMenuFragment extends SherlockFragment {
 
         return super.onOptionsItemSelected(item);
     }
-
-    /*@Override
-    public void onCreateOptionsMenu(android.view.Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-
-        inflater.inflate(R.menu.view_menu_menu, menu);
-    }*/
 }
