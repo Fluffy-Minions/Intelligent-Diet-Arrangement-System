@@ -8,7 +8,7 @@ The application formulates constraints regarding the meals and uses [JaCoP](http
 ## Project and team ##
 This project was developed for the Team Project subject at West University of Timișoara, Computer Science faculty.
 Team members:
-* [Andreea Muscalagiu](https://github.com/andreea93m) (team leader) - responsible with analyzing the requirements, creating diagrams and implementing some classes used for the interaction with the database and some of the calculators for the minimum requirements of a person.
+* [Andreea Muscalagiu](https://github.com/andreea93m) (project manager) - responsible with project analysis, managing part of the interaction with the database and implementing some of the calculators for the minimum requirements of a person.
 * [Bianca Trif](https://github.com/bianca93)
 * [Kinga Nemes](https://github.com/nemeskg)
 * [Sorin Davidoi](https://github.com/sorin-davidoi) - responsible for the Android UI, took part in data scraping and implementing the constraints in JaCoP.
