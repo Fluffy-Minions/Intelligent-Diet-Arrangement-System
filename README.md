@@ -14,5 +14,5 @@ Team members:
 * [Sorin Davidoi](https://github.com/sorin-davidoi) - responsible for the Android UI, took part in data scraping and implementing the constraints in JaCoP.
 
 ## Screenshots ##
-![Screenshot1](https://raw.githubusercontent.com/Fluffy-Minions/Intelligent-DIet-Arrangement-System/master/images/prototypeSS/FinalScreenshot1.png)
-![Screenshot2](https://raw.githubusercontent.com/Fluffy-Minions/Intelligent-DIet-Arrangement-System/master/images/prototypeSS/FinalScreenshot4.png)
+![Screenshot1](https://raw.githubusercontent.com/Fluffy-Minions/Intelligent-Diet-Arrangement-System/master/images/prototypeSS/FinalScreenshot1.png)
+![Screenshot2](https://raw.githubusercontent.com/Fluffy-Minions/Intelligent-Diet-Arrangement-System/master/images/prototypeSS/FinalScreenshot4.png)
